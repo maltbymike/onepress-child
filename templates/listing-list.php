@@ -68,6 +68,8 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 if( !$_product->is_type( 'simple_rental' ) ) continue;
 
+                if( $_product->get_catalog_visibility() == 'hidden' ) continue;
+
                 if( isset( $post_obj->post_parent ) ){
 
                     $pp = wc_get_product( $post_obj->post_parent );
