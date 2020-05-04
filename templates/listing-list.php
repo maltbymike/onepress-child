@@ -46,10 +46,12 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 <th class="product-price-top"><?php echo __( 'Weekly', 'mpc' ); ?></th>
 
+                <!--
                 <th class="product-quantity"><?php echo __( 'Quantity', 'mpc' ); ?></th>
 
                 <th class="product-add-to-cart"><?php echo __( 'Buy', 'mpc' ); ?></th>
-
+                -->
+                
             </tr>
 
         </thead>
@@ -150,6 +152,8 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 </td>
 
+
+                <!--
                 <td class="product-quantity">
 
                     <?php if ( ! $_product->is_sold_individually() ){ ?>
@@ -171,6 +175,7 @@ $variation = mpc_check_if_variation_exists( $ids );
                     <input type="checkbox" name="product_ids[]" value="<?php echo $id; ?>">
 
                 </td>
+                -->
 
             </tr>
 
