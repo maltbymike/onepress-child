@@ -28,7 +28,9 @@ $variation = mpc_check_if_variation_exists( $ids );
 
     </style>
 
+    <!--
     <form class="cart" method="post" enctype="multipart/form-data">
+    -->
 
     <table class="mpc-wrap" cellspacing="0">
 
@@ -51,7 +53,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 <th class="product-add-to-cart"><?php echo __( 'Buy', 'mpc' ); ?></th>
                 -->
-                
+
             </tr>
 
         </thead>
@@ -193,6 +195,8 @@ $variation = mpc_check_if_variation_exists( $ids );
 
     </table>
 
+
+    <!--
     <div class="mpc-button">
 
         <div>
@@ -204,9 +208,12 @@ $variation = mpc_check_if_variation_exists( $ids );
         </div>
 
     </div>
+    -->
 
+    <!--
     </form>
-
+    -->
+  
     <div id="mpcpop"></div>
 
     <?php include( WMC_DIR . '/assets/js/scripts.php'); ?>
