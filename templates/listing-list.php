@@ -133,6 +133,7 @@ $variation = mpc_check_if_variation_exists( $ids );
                 <td class="product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
+                        <span class="d-inline d-md-none w-50">4 Hours: </span>
                         <?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?>
                     <?php } ?>
 
@@ -141,6 +142,7 @@ $variation = mpc_check_if_variation_exists( $ids );
                 <td class="product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
+                        <span class="d-inline d-md-none w-50">Daily: </span>
                         <?php echo __( $_product->get_daily_rate(), "mpc" ); ?>
                     <?php } ?>
 
@@ -149,6 +151,7 @@ $variation = mpc_check_if_variation_exists( $ids );
                 <td class="product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
+                        <span class="d-inline d-md-none w-50">Weekly: </span>
                         <?php echo __( $_product->get_weekly_rate(), "mpc" ); ?>
                     <?php } ?>
 
@@ -213,7 +216,7 @@ $variation = mpc_check_if_variation_exists( $ids );
     <!--
     </form>
     -->
-  
+
     <div id="mpcpop"></div>
 
     <?php include( WMC_DIR . '/assets/js/scripts.php'); ?>
