@@ -30,7 +30,7 @@ $variation = mpc_check_if_variation_exists( $ids );
         padding: .75em 1em;
       }
 
-      .cart_item {
+      .cart_item div{
           padding: .75em 1em;
           vertical-align: middle;
           color: #333;
