@@ -134,29 +134,29 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 </div>
 
-                <div class="col-4 col-md-2 product-price">
+                <div class="col-4 col-md-2">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
-                        <span class="d-inline d-md-none col">4 Hours: </span>
-                        <span class="col"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></span>
+                        <div class="d-inline d-md-none product-price-top">4 Hours: </div>
+                        <div class="product-price"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
 
-                <div class="col-4 col-md-2 product-price">
+                <div class="col-4 col-md-2">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
-                        <span class="d-inline d-md-none col">Daily: </span>
-                        <span class="col"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></span>
+                        <div class="d-inline d-md-none product-price-top">Daily: </div>
+                        <div class="product-price"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
 
-                <div class="col-4 col-md-2 product-price">
+                <div class="col-4 col-md-2">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
-                        <span class="d-inline d-md-none col">Weekly: </span>
-                        <span class="col"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></span>
+                        <div class="d-inline d-md-none product-price-top">Weekly: </div>
+                        <div class="product-price"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
