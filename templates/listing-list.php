@@ -24,7 +24,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
     <style type="text/css">
 
-      .cart_item div{
+      .cart_item {
           padding: .75em 1em;
           vertical-align: middle;
           color: #333;
@@ -88,9 +88,9 @@ $variation = mpc_check_if_variation_exists( $ids );
 
               if ( isset( $_product ) && $_product->exists() ) { ?>
 
-            <div class="row cart_item <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
+            <div class="row <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
-                <div class="col-md-2 product-image">
+                <div class="col-md-2 product-image cart_item">
 
                     <?php
 
@@ -120,7 +120,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                 </div>
 
-                <div class="col-md-4 product-name">
+                <div class="col-md-4 product-name cart_item">
 
                     <?php if ( ! $_product->is_visible() ){
 
@@ -138,7 +138,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <div class="d-block d-md-none product-price-top product-table-heading">4 Hours</div>
-                        <div class="product-price"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
+                        <div class="product-price cart_item"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
@@ -147,7 +147,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <div class="d-block d-md-none product-price-top product-table-heading">Daily</div>
-                        <div class="product-price"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
+                        <div class="product-price cart_item"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
@@ -155,8 +155,8 @@ $variation = mpc_check_if_variation_exists( $ids );
                 <div class="col-4 col-md-2">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
-                        <div class="d-block d-md-none product-price-top">Weekly</div>
-                        <div class="product-price"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
+                        <div class="d-block d-md-none product-price-top product-table-heading">Weekly</div>
+                        <div class="product-price cart_item"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
