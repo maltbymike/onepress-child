@@ -39,11 +39,11 @@ $variation = mpc_check_if_variation_exists( $ids );
 
           <div class="col-md-4 product-name"><?php echo __( 'Product', 'mpc' ); ?></div>
 
-          <div class="col-md-2 product-price-top"><?php echo __( '4 Hour', 'mpc' ); ?></div>
+          <div class="col-4 col-md-2 product-price-top"><?php echo __( '4 Hour', 'mpc' ); ?></div>
 
-          <div class="col-md-2 product-price-top"><?php echo __( 'Daily', 'mpc' ); ?></div>
+          <div class="col-4 col-md-2 product-price-top"><?php echo __( 'Daily', 'mpc' ); ?></div>
 
-          <div class="col-md-2 product-price-top"><?php echo __( 'Weekly', 'mpc' ); ?></div>
+          <div class="col-4 col-md-2 product-price-top"><?php echo __( 'Weekly', 'mpc' ); ?></div>
 
       </div>
 
