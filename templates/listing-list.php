@@ -20,11 +20,11 @@ $variation = mpc_check_if_variation_exists( $ids );
 
 <div class="woocommerce-page woocommerce">
 
-    <?php include( WMC_DIR . '/assets/css/style.php' ); ?>
+    <?php //include( WMC_DIR . '/assets/css/style.php' ); ?>
 
     <style type="text/css">
 
-    <?php if( $wmc_thead_back_color ) echo '.mpc-wrap thead tr th{ background: ' . $wmc_thead_back_color . '}'; ?>
+    <?php if( $wmc_thead_back_color ) echo '.product-table-heading div{ background: ' . $wmc_thead_back_color . '}'; ?>
 
     </style>
 
@@ -33,7 +33,7 @@ $variation = mpc_check_if_variation_exists( $ids );
     -->
     <div class="container">
 
-      <div class="row">
+      <div class="row product-table-heading">
 
           <div class="col-md-2 product-image"><?php echo __( 'Image', 'mpc' ); ?></div>
 
