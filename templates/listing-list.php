@@ -24,6 +24,13 @@ $variation = mpc_check_if_variation_exists( $ids );
 
     <style type="text/css">
 
+      .product-table-heading div {
+        background: #444;
+        color: #efefef;
+        padding: .75em 1em;
+      }
+
+
     <?php if( $wmc_thead_back_color ) echo '.product-table-heading div{ background: ' . $wmc_thead_back_color . '}'; ?>
 
     </style>
