@@ -30,6 +30,12 @@ $variation = mpc_check_if_variation_exists( $ids );
         padding: .75em 1em;
       }
 
+      .cart_item {
+          padding: 1em;
+          vertical-align: middle;
+          color: #333;
+      }
+
 
     <?php if( $wmc_thead_back_color ) echo '.product-table-heading div{ background: ' . $wmc_thead_back_color . '}'; ?>
 
