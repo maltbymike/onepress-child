@@ -36,7 +36,7 @@ $variation = mpc_check_if_variation_exists( $ids );
           color: #333;
       }
 
-      .product-price .product-price-top {
+      .product-price, .product-price-top {
           text-align:center;
       }
 
