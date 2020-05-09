@@ -47,38 +47,33 @@ $variation = mpc_check_if_variation_exists( $ids );
 
       </div>
 
-      <table>
-        </thead>
+      <?php
 
-        <tbody>
+      if( count( $ids ) > 0 ) :
 
-        <?php
+      	foreach( $ids as $id ) :
 
-        if( count( $ids ) > 0 ) :
+              $post_obj = get_post( $id );
 
-        	foreach( $ids as $id ) :
+              $_product = wc_get_product( $id );
 
-                $post_obj = get_post( $id );
+              if( !$_product->is_type( 'simple_rental' ) ) continue;
 
-                $_product = wc_get_product( $id );
+              if( $_product->get_catalog_visibility() == 'hidden' ) continue;
 
-                if( !$_product->is_type( 'simple_rental' ) ) continue;
+              if( isset( $post_obj->post_parent ) ){
 
-                if( $_product->get_catalog_visibility() == 'hidden' ) continue;
+                  $pp = wc_get_product( $post_obj->post_parent );
 
-                if( isset( $post_obj->post_parent ) ){
+                  if( !empty( $pp ) && $pp->is_type( 'grouped' ) ) continue;
 
-                    $pp = wc_get_product( $post_obj->post_parent );
+              }
 
-                    if( !empty( $pp ) && $pp->is_type( 'grouped' ) ) continue;
+              if ( isset( $_product ) && $_product->exists() ) { ?>
 
-                }
+            <div class="row cart_item <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
-                if ( isset( $_product ) && $_product->exists() ) { ?>
-
-            <tr class="cart_item <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
-
-                <td class="product-image">
+                <div class="col-md-2 product-image">
 
                     <?php
 
@@ -106,9 +101,9 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     } ?>
 
-                </td>
+                </div>
 
-                <td class="product-name">
+                <div class="col-md-4 product-name">
 
                     <?php if ( ! $_product->is_visible() ){
 
@@ -120,61 +115,36 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     } ?>
 
-                </td>
+                </div>
 
-                <td class="product-price">
+                <div class="col-4 col-md-2 product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <span class="d-inline d-md-none col">4 Hours: </span>
                         <span class="col"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></span>
                     <?php } ?>
 
-                </td>
+                </div>
 
-                <td class="product-price">
+                <div class="col-4 col-md-2 product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <span class="d-inline d-md-none col">Daily: </span>
                         <span class="col"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></span>
                     <?php } ?>
 
-                </td>
+                </div>
 
-                <td class="product-price">
+                <div class="col-4 col-md-2 product-price">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <span class="d-inline d-md-none col">Weekly: </span>
                         <span class="col"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></span>
                     <?php } ?>
 
-                </td>
+                </div>
 
-
-                <!--
-                <td class="product-quantity">
-
-                    <?php if ( ! $_product->is_sold_individually() ){ ?>
-
-                    <div class="quantity">
-
-                        <label class="screen-reader-text" for="quantity_5d4224fa42a5f"><?php echo __( "Quantity", "mpc" ); ?></label>
-
-                        <input type="number" class="input-text qty text" step="1" min="1" max="" name="quantity<?php echo $id; ?>" value="1" title="Qty" size="4" inputmode="numeric">
-
-                    </div>
-
-                    <?php } ?>
-
-                </td>
-
-                <td class="product-select">
-
-                    <input type="checkbox" name="product_ids[]" value="<?php echo $id; ?>">
-
-                </td>
-                -->
-
-            </tr>
+            </div>
 
             <?php
 
@@ -186,28 +156,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
         ?>
 
-        </tbody>
-
-    </table>
-
-
-    <!--
-    <div class="mpc-button">
-
-        <div>
-
-            <input type="hidden" name="add_more_to_cart" value="1">
-
-            <input type="submit" class="single_add_to_cart_button button alt wc-forward" name="proceed" value="<?php echo __( $wmc_button_text, 'mpc' ); ?>" />
-
-        </div>
-
-    </div>
-    -->
-
-    <!--
-    </form>
-    -->
+      </div>
 
     <div id="mpcpop"></div>
 
