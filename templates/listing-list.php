@@ -25,15 +25,19 @@ $variation = mpc_check_if_variation_exists( $ids );
     <style type="text/css">
 
       .product-table-heading div {
-        background: #444;
-        color: #efefef;
-        padding: .75em 1em;
+          background: #444;
+          color: #efefef;
+          padding: .75em 1em;
       }
 
       .cart_item div{
           padding: .75em 1em;
           vertical-align: middle;
           color: #333;
+      }
+
+      .product-price .product-price-top {
+          text-align:center;
       }
 
 
