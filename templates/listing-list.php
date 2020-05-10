@@ -24,35 +24,6 @@ $variation = mpc_check_if_variation_exists( $ids );
 
     <style type="text/css">
 
-      .cart_item {
-          padding: .75em 1em;
-          vertical-align: middle;
-          color: #333;
-      }
-
-      .product-table-heading {
-        background: #444;
-        color: #efefef;
-        padding: .75em 1em;
-      }
-
-      .product-table .row:nth-child(2n) {
-        background: #f5f5f5;
-      }
-
-      @media all and (max-width: 992px;) {
-        .product-table .row {
-          box-shadow: 5px 5px 5px grey;
-          background: #ffffff;
-          margin-bottom: 1em;
-        }
-      }
-
-      .product-price, .product-price-top {
-          text-align:center;
-      }
-
-
     <?php if( $wmc_thead_back_color ) echo '.product-table-heading div{ background: ' . $wmc_thead_back_color . '}'; ?>
 
     </style>
