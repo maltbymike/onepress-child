@@ -40,7 +40,7 @@ $variation = mpc_check_if_variation_exists( $ids );
         background: #f5f5f5;
       }
 
-      @media all and (max-width: @screen-md-min) {
+      @media all and (max-width: 992px;) {
         .product-table .row {
           box-shadow: 5px 5px 5px grey;
           background: #ffffff;
