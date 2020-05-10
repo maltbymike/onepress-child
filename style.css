@@ -46,6 +46,11 @@
     display: block;
     margin: auto;
   }
+
+  .product-name {
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 .product-price, .product-price-top {
