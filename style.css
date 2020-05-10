@@ -50,9 +50,13 @@
   }
 
   .product-name {
-    font-weight: bold;
     text-align: center;
   }
+}
+
+.product-name {
+  text-decoration: none !important;
+  font-weight: bold;
 }
 
 .product-price, .product-price-top {
