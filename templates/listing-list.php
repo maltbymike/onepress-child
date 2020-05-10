@@ -36,7 +36,7 @@ $variation = mpc_check_if_variation_exists( $ids );
         padding: .75em 1em;
       }
 
-      .product-table .row:nth-child(2n) div {
+      .product-table .row:nth-child(2n) {
         background: #f5f5f5;
       }
 
