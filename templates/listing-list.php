@@ -71,7 +71,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
               if ( isset( $_product ) && $_product->exists() ) { ?>
 
-            <div class="row <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
+            <div class="row align-items-center <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
                 <div class="col-md-2 product-image cart_item">
 
