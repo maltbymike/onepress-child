@@ -40,6 +40,13 @@ $variation = mpc_check_if_variation_exists( $ids );
         background: #f5f5f5;
       }
 
+      @media all and (max-width: @screen-md-min) {
+        .product-table .row {
+          box-shadow: 5px 5px 5px grey;
+          background: #ffffff;
+        }
+      }
+
       .product-price, .product-price-top {
           text-align:center;
       }
@@ -108,7 +115,7 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     <?php
 
-                    // $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image() );
+                    $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image() );
 
                     if ( ! $_product->is_visible() ) {
 
