@@ -44,6 +44,7 @@ $variation = mpc_check_if_variation_exists( $ids );
         .product-table .row {
           box-shadow: 5px 5px 5px grey;
           background: #ffffff;
+          margin-bottom: 1em;
         }
       }
 
