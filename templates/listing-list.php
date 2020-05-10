@@ -36,6 +36,10 @@ $variation = mpc_check_if_variation_exists( $ids );
         padding: .75em 1em;
       }
 
+      .product-table .row:nth-child(2n) div {
+        background: #f5f5f5;
+      }
+
       .product-price, .product-price-top {
           text-align:center;
       }
@@ -48,7 +52,7 @@ $variation = mpc_check_if_variation_exists( $ids );
     <!--
     <form class="cart" method="post" enctype="multipart/form-data">
     -->
-    <div class="container">
+    <div class="container product-table">
 
       <div class="row">
 
