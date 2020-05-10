@@ -45,6 +45,8 @@
   .product-image a img {
     display: block;
     margin: auto;
+    height: 10rem;
+    width: auto;
   }
 
   .product-name {
