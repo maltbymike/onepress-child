@@ -41,6 +41,11 @@
     background: #ffffff;
     margin-bottom: 40px;
   }
+
+  .product-image a img {
+    display: block;
+    margin: auto;
+  }
 }
 
 .product-price, .product-price-top {
