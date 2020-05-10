@@ -123,9 +123,9 @@ $variation = mpc_check_if_variation_exists( $ids );
 
                     } else {
 
-                        printf( '<img width="300" height="254" src="%s class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" data-fullimage="%s">', $thumbnail, $full );
+                        // printf( '<img width="300" height="254" src="%s" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" data-fullimage="%s">', $thumbnail, $full );
 
-                        // printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink() ), $thumbnail );
+                        printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink() ), $thumbnail );
 
                     } ?>
 
