@@ -62,3 +62,7 @@
 .product-price, .product-price-top {
     text-align:center;
 }
+
+.woocommerce table.shop_attributes th {
+  width: auto;
+}
