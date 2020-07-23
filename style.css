@@ -66,3 +66,9 @@
 .woocommerce table.shop_attributes th {
   width: auto;
 }
+
+.wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
+    position: sticky;
+    top: 75px;
+    z-index: 10;
+}
