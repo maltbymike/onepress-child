@@ -93,6 +93,7 @@
   top: 75px;
   padding: 25px;
   background-color: #f47621;
+  z-index: 10;
 }
 
 .homepage-product-search button.wc-block-product-search__button:before {
