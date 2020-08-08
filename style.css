@@ -4,23 +4,19 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.9
+ Version:      1.0.10
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-.wp-block-ub-content-toggle-accordion-content-wrap {
-  padding: 0;
-}
-
-.wp-block-ub-content-toggle {
-    margin: 0;
-}
 
 .cart_item {
     padding: .75em 1em;
     vertical-align: middle;
     color: #333;
+}
+
+.full-width-background-colour {
+    background-color: #f47621;
 }
 
 .no-top-margin {
@@ -67,6 +63,15 @@
     text-align:center;
 }
 
+.stick-to-header {
+  position: sticky;
+  top: 75px;
+  z-index: 10;
+}
+.admin-bar .stick-to-header {
+  top: 100px;
+}
+
 .table-dark thead th {
   background-color: black;
   color: white;
@@ -86,6 +91,10 @@
   color: #000000;
 }
 
+.wp-block-ub-content-toggle {
+  margin: 0;
+}
+
 .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
     position: sticky;
     top: 75px;
@@ -96,16 +105,13 @@
   top: 100px;
 }
 
-.wp-block-woocommerce-product-search.homepage-product-search {
-  position: sticky;
-  top: 75px;
-  padding: 25px;
-  background-color: #f47621;
-  z-index: 10;
+.wp-block-ub-content-toggle-accordion-content-wrap {
+  padding: 0;
 }
 
-.admin-bar .wp-block-woocommerce-product-search.homepage-product-search {
-    top: 100px;
+.wp-block-woocommerce-product-search.homepage-product-search {
+  padding: 15px 0;
+  background-color: #f47621;
 }
 
 .homepage-product-search button.wc-block-product-search__button:before {
