@@ -83,6 +83,7 @@
 
 .wc-block-product-search .wc-block-product-search__button {
   border: 3px solid #ffffff;
+  color: #ffffff;
 }
 
 .woocommerce .products ul, .woocommerce ul.products {
@@ -117,7 +118,7 @@
   padding: 0;
 }
 
-.wc-block-product-search .wc-block-product-search__button {
+.wp-block-woocommerce-product-search.homepage-product-search {
   padding: 5px 0;
   color: #ffffff;
   background-color: #f47621;
