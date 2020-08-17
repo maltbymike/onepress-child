@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.15
+ Version:      1.0.16
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -127,7 +127,7 @@
 div.wpforms-container-full .wpforms-form input[type=submit],
 div.wpforms-container-full .wpforms-form button[type=submit] {
     background-color: #fff;
-    border: 3px solid #f47621;
+    border: 1px solid #f47621;
     color: #f47621;
 }
 
@@ -141,7 +141,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:active,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:focus {
     background-color: #f47621;
-    border: 3px solid: #f47621;
+    border: 1px solid: #f47621;
     color: #fff;
 }
 
