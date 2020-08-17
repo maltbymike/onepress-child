@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.12
+ Version:      1.0.13
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -81,6 +81,10 @@
   color: white;
 }
 
+.wc-block-product-search .wc-block-product-search__button {
+  border: 3px solid #ffffff;
+}
+
 .woocommerce .products ul, .woocommerce ul.products {
   align-items: flex-end;
   flex-wrap: wrap;
@@ -116,6 +120,23 @@
 .wp-block-woocommerce-product-search.homepage-product-search {
   padding: 5px 0;
   background-color: #f47621;
+}
+
+div.wpforms-container-full .wpforms-form input[type=submit],
+div.wpforms-container-full .wpforms-form button[type=submit] {
+    background-color: #fff;
+    border: 3px solid #f47621;
+    color: #f47621;
+}
+
+div.wpforms-container-full .wpforms-form input[type=submit]:hover,
+div.wpforms-container-full .wpforms-form input[type=submit]:active,
+div.wpforms-container-full .wpforms-form button[type=submit]:hover,
+div.wpforms-container-full .wpforms-form button[type=submit]:active,
+div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
+div.wpforms-container-full .wpforms-form .wpforms-page-button:active {
+    background-color: #f47621;
+    color: #fff;
 }
 
 .homepage-product-search button.wc-block-product-search__button:before {
