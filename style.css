@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.23
+ Version:      1.0.24
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -83,7 +83,8 @@
 
 @media only screen and (max-width: 768px) {
   .slide-content .slide-text-left,
-  .slide-content .slide-text-right {
+  .slide-content .slide-text-right,
+  .slide-content .slide-text-center {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -111,6 +112,12 @@
 .table-dark thead th {
   background-color: black;
   color: white;
+}
+
+.ub-block-post-grid .is-grid article {
+    padding: 1.5em;
+    border: thin solid #000000;
+    box-shadow: 0.8em 0.8em 0.8em;
 }
 
 .wc-block-product-search .wc-block-product-search__button {

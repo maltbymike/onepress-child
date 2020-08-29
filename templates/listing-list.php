@@ -33,7 +33,7 @@ $variation = mpc_check_if_variation_exists( $ids );
     -->
     <div class="container product-table">
 
-      <div class="row">
+      <div class="row product-table-rate-heading">
 
           <div class="d-none d-md-inline col-md-2 product-image product-table-heading"><?php echo __( 'Image', 'mpc' ); ?></div>
 
