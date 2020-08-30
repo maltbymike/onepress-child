@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.29
+ Version:      1.0.30
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -68,8 +68,16 @@
     text-align:center;
 }
 
+ul.products[class*=columns-] {
+  display: flex;
+  align-items: stretch;
+}
+
 ul.products[class*=columns-] li.product,
 .woocommerce-page ul.products[class*=columns-] li.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     border: thin solid;
     box-shadow: 0.8em 0.8em 0.8em;
 }
