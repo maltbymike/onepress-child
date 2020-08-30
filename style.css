@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.30
+ Version:      1.0.31
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -69,8 +69,10 @@
 }
 
 ul.products[class*=columns-] {
-  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
   align-items: stretch;
+  display: flex;
 }
 
 ul.products[class*=columns-] li.product,
@@ -78,17 +80,17 @@ ul.products[class*=columns-] li.product,
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin: 0 1.5em 0 0;
     border: thin solid;
     box-shadow: 0.8em 0.8em 0.8em;
 }
 
-@media only screen and (max-width: 768px) {
-  ul.products[class*=columns-] li.product,
-  .woocommerce-page ul.products[class*=columns-] li.product {
-      width: 100%;
-  }
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+  padding: .5em .5em;
+  white-space: normal;
 }
-
 
 .slide-content .slide-text {
   padding: .5em;
@@ -150,12 +152,6 @@ ul.products[class*=columns-] li.product,
 .wc-block-product-search .wc-block-product-search__button {
   border: 3px solid #ffffff;
   color: #ffffff;
-}
-
-.woocommerce .products ul, .woocommerce ul.products {
-  align-items: flex-end;
-  flex-wrap: wrap;
-  display: flex;
 }
 
 .woocommerce table.shop_attributes th {
