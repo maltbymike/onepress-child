@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.34
+ Version:      1.0.35
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -88,6 +88,12 @@ ul.products[class*=columns-] li.product,
     box-shadow: 0.8em 0.8em 0.8em;
 }
 
+ul.products[class*=columns-] li.product:hover,
+.woocommerce-page ul.products[class*=columns-] li.product:hover {
+  box-shadow: 0.8em 0.8em 0.8em #f47621;
+}
+
+
 .woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .woocommerce ul.products li.product h3 {
@@ -159,6 +165,10 @@ ul.products[class*=columns-] li.product,
     padding: 1.5em;
     border: thin solid #000000;
     box-shadow: 0.8em 0.8em 0.8em;
+}
+
+.ub-block-post-grid .is-grid article:hover {
+  box-shadow: 0.8em 0.8em 0.8em #f47621;
 }
 
 .wc-block-product-search .wc-block-product-search__button {
