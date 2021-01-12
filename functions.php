@@ -12,6 +12,7 @@ function my_theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
+// Add product search bar to bottom of header
 function ir_product_search_header() {
   get_template_part( 'templates/header', 'search' );
 }
