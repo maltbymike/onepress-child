@@ -14,7 +14,7 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 function ir_product_search_header() {
   ?>
-  <div class="wp-block-group full-width-background-colour stick-to-header">
+  <div class="wp-block-group full-width-background-colour">
     <div class="wp-block-group__inner-container">
       <div class="wp-block-woocommerce-product-search homepage-product-search container">
         <div class="wc-block-product-search homepage-product-search container">
