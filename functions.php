@@ -1,5 +1,4 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
 
     $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
@@ -11,3 +10,10 @@ function my_theme_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
 }
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+// Add product search bar to bottom of header
+function ir_product_search_header() {
+  get_template_part( 'templates/header', 'search' );
+}
+add_action( 'onepress_page_before_content', 'ir_product_search_header');
