@@ -16,4 +16,4 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function ir_product_search_header() {
   get_template_part( 'templates/header', 'search' );
 }
-add_action( 'onepress_page_before_content', 'ir_product_search_header')
+add_action( 'onepress_page_before_content', 'ir_product_search_header');

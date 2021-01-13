@@ -83,6 +83,7 @@ ul.products[class*=columns-] li.product,
 .woocommerce-page ul.products[class*=columns-] li.product {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: flex-end;
     width: 15em;
     margin: 0 .75em 1.5em;
