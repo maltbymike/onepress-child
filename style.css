@@ -81,14 +81,17 @@ ul.products[class*=columns-] {
 
 ul.products[class*=columns-] li.product,
 .woocommerce-page ul.products[class*=columns-] li.product {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end;
     width: 15em;
     margin: 0 .75em 1.5em;
     border: thin solid;
-    box-shadow: 0.5em 0.5em 0.5em;
+    box-shadow: 0.5em 0.5em 0.5em; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: .75em;
 }
 
 ul.products[class*=columns-] li.product:hover,
@@ -96,6 +99,9 @@ ul.products[class*=columns-] li.product:hover,
   box-shadow: 0.5em 0.5em 0.5em #f47621;
 }
 
+.woocommerce .products ul::after, .woocommerce .products ul::before, .woocommerce ul.products::after, .woocommerce ul.products::before {
+  content: none;
+}
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
