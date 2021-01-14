@@ -18,7 +18,6 @@ function ir_product_search_header() {
 }
 add_action( 'onepress_page_before_content', 'ir_product_search_header');
 
-
 // Override onepress_get_social_profiles to add noopener tag
 function onepress_get_social_profiles() {
 	$array = get_theme_mod( 'onepress_social_profiles' );
