@@ -66,7 +66,7 @@ function onepress_get_social_profiles() {
 	return $html;
 }
 
-add_filter( 'woocommerce_upsell_display_args', 'ir_woocommerce_upsell_display_args' );
+add_filter( 'woocommerce_upsell_display_args', 'ir_woocommerce_upsell_display_args', 99999 );
 
 function ir_woocommerce_upsell_display_args( $args ) {
   	  $args['columns']        = 3;
