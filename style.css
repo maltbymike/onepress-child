@@ -130,10 +130,12 @@ ul.products[class*=columns-] li.product:hover,
 
 .slide-content .slide-text-right {
   margin-left: auto;
+  margin-right: 2em;
 }
 
 .slide-content .slide-text-left {
   margin-right: auto;
+  margin-left: 2em;
 }
 
 .slide-content .slide-text-center {
