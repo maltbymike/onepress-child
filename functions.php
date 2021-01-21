@@ -65,3 +65,11 @@ function onepress_get_social_profiles() {
 
 	return $html;
 }
+
+add_filter( 'woocommerce_upsell_display_args', 'ir_woocommerce_upsell_display_args' );
+
+function ir_woocommerce_upsell_display_args( $args ) {
+  	  $args['columns']        = 3;
+      $args['posts_per_page'] = 10;
+  	   return $args;
+  	}
