@@ -67,3 +67,8 @@ function onepress_get_social_profiles() {
 }
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'ir_woocommerce_output_upsells', 5 );
+
+function ir_woocommerce_output_upsells() {
+woocommerce_upsell_display( -1,1 ); // Display max 3 products, 3 per row
+}
