@@ -68,7 +68,18 @@
     text-align:center;
 }
 
-/* ul.products[class*=columns-] { */
+/* Style rental product upsells */
+.upsells ul.products.columns-1 li.product a {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-gap: 1.5em;
+}
+
+.upsells ul.products.columns-1 li.product a img {
+  width: 8em;
+}
+/* End Style rental product upsells */
+
 ul.products.columns-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
