@@ -66,9 +66,22 @@ function onepress_get_social_profiles() {
 	return $html;
 }
 
+
+// Move upsells section above Additional Information
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'ir_woocommerce_output_upsells', 5 );
 
 function ir_woocommerce_output_upsells() {
-woocommerce_upsell_display( -1,1 ); // Display max 3 products, 3 per row
+  woocommerce_upsell_display( -1,1 ); // Display max 3 products, 3 per row
+}
+
+// Customise display of upsells
+add_action( 'woocommerce_before_shop_loop_item', 'ir_customize_single_upsells' );
+
+function ir_customize_single_upsells() {
+   global $woocommerce_loop;
+   if ( $woocommerce_loop['name'] == 'up-sells' ) {
+      // remove add to cart button
+      remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+   }
 }
