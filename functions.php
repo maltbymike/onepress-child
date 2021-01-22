@@ -69,7 +69,8 @@ function onepress_get_social_profiles() {
 add_filter( 'woocommerce_upsell_display_args', 'ir_woocommerce_upsell_display_args', 99999 );
 
 function ir_woocommerce_upsell_display_args( $args ) {
-  	  $args['columns']        = 3;
-      $args['posts_per_page'] = 10;
-  	   return $args;
+      $args['posts_per_page'] = 2;
+  	  $args['columns']        = 2;
+
+      return $args;
   	}
