@@ -88,8 +88,8 @@ function ir_customize_single_upsells() {
    }
 }
 
-function ir_template_loop_price_rental_rates() {
-  global $products;
+function ir_template_loop_price_rental_rates( $product ) {
+  // global $products;
   echo "<span class='rental-price 4-hour-rate'>" . $product->get_4_hour_rate() . "</span>";
   echo "<span class='rental-price daily-rate'>" . $product->get_daily_rate() . "</span>";
   echo "<span class='rental-price weekly-rate'>" . $product->get_weekly_rate() . "</span>";
