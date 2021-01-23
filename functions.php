@@ -94,9 +94,9 @@ function ir_change_product_price_rental_rates( $price_html, $product ) {
 
   if ($product->is_type('simple_rental')) {
 
-    $price_html  = '<span class="rental-price 4-hour-rate">$' . $product->get_4_hour_rate() . '</span>';
-    $price_html .= '<span class="rental-price daily-rate">$' . $product->get_daily_rate() . '</span>';
-    $price_html .= '<span class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</span>';
+    $price_html  = '<div class="rental-price 4-hour-rate">$' . $product->get_4_hour_rate() . '</div>';
+    $price_html .= '<div class="rental-price daily-rate">$' . $product->get_daily_rate() . '</div>';
+    $price_html .= '<div class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</div>';
 
   }
 
