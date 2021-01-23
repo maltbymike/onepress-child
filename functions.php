@@ -83,17 +83,22 @@ function ir_customize_single_upsells() {
    if ( $woocommerce_loop['name'] == 'up-sells' ) {
       // remove add to cart button
       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-      remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-      add_action( 'woocommerce_after_shop_loop_item_title', 'ir_template_loop_price_rental_rates', 10 );
+      add_filter( 'woocommerce_get_price_html', 'ir_change_product_price_rental_rates', 10, 2 );
+      // remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+      // add_action( 'woocommerce_after_shop_loop_item_title', 'ir_template_loop_price_rental_rates', 10 );
+
    }
 }
 
-function ir_template_loop_price_rental_rates( $product ) {
-  $html = "";
+function ir_change_product_price_rental_rates( $price_html, $product ) {
 
-  $html .= "<span class='rental-price 4-hour-rate'>" . $product->get_4_hour_rate() . "</span>";
-  $html .= "<span class='rental-price daily-rate'>" . $product->get_daily_rate() . "</span>";
-  $html .= "<span class='rental-price weekly-rate'>" . $product->get_weekly_rate() . "</span>";
+  if ($product->is_type('simple_rental')) {
 
-  return $html;
+    $price_html  = '<span class="rental-price 4-hour-rate">$' . $product->get_4_hour_rate() . '</span>';
+    $price_html .= '<span class="rental-price daily-rate">$' . $product->get_daily_rate() . '</span>';
+    $price_html .= '<span class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</span>';
+
+  }
+
+  return $price_html;
 }
