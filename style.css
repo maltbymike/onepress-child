@@ -76,6 +76,10 @@
     align-items: center;
 }
 
+.upsells .product:nth-child(even) {
+    background: #f5f5f5;
+}
+
 .upsells ul.products li.product {
   margin-bottom: 1em;
 }
