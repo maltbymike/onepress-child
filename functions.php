@@ -84,5 +84,13 @@ function ir_customize_single_upsells() {
       // remove add to cart button
       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
       remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+      add_action( 'woocommerce_after_shop_loop_item_title', 'ir_template_loop_price_rental_rates', 10 );
    }
+}
+
+function ir_template_loop_price_rental_rates() {
+  global $products;
+  echo "<span class='rental-price 4-hour-rate'>" . $product->get_4_hour_rate() . "</span>";
+  echo "<span class='rental-price daily-rate'>" . $product->get_daily_rate() . "</span>";
+  echo "<span class='rental-price weekly-rate'>" . $product->get_weekly_rate() . "</span>";
 }
