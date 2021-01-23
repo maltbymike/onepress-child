@@ -71,8 +71,9 @@
 /* Style rental product upsells */
 .upsells ul.products.columns-1 li.product a {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-template-columns: 110px repeat(auto-fit, minmax(16em, 1fr));
     grid-gap: 1.5em;
+    align-items: center;
 }
 
 .upsells ul.products.columns-1 li.product a img {
@@ -83,6 +84,10 @@
     width: 33%;
     display: inline-block;
     text-align: center;
+}
+
+.upsells .woocommerce-loop-product__title {
+    text-align: left;
 }
 /* End Style rental product upsells */
 
