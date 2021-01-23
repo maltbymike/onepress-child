@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.43
+ Version:      1.0.44
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -77,6 +77,12 @@
 
 .upsells ul.products.columns-1 li.product a img {
   width: 8em;
+}
+
+.upsells .rental-price {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
 }
 /* End Style rental product upsells */
 
