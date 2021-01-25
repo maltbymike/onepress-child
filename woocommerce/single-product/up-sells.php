@@ -33,10 +33,12 @@ if ( $upsells ) : ?>
 		<div class='row product-table-rate-heading'>
 	    <span class='product-table-heading'>Image</span>
 	    <span class='product-table-heading'>Product</span>
-	    <span class='product-table-heading'>4 Hour</span>
-	    <span class='product-table-heading'>Daily</span>
-	    <span class='product-table-heading'>Weekly</span>
-	  </div>
+			<span class='product-table-rental-price-group'>
+		    <span class='product-table-heading'>4 Hour</span>
+		    <span class='product-table-heading'>Daily</span>
+		    <span class='product-table-heading'>Weekly</span>
+			</span>
+		</div>
 
 		<?php woocommerce_product_loop_start(); ?>
 
