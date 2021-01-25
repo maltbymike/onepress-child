@@ -87,15 +87,16 @@ function ir_customize_single_upsells() {
 
 add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading' );
 function ir_product_upsells_products_heading() {
-  $upsell_heading =  "<div class='row product-table-rate-heading'>";
-  $upsell_heading .=    "<span class='product-table-heading'>Image</span>";
-  $upsell_heading .=    "<span class='product-table-heading'>Product</span>";
-  $upsell_heading .=    "<span class='product-table-heading'>4 Hour</span>";
-  $upsell_heading .=    "<span class='product-table-heading'>Daily</span>";
-  $upsell_heading .=    "<span class='product-table-heading'>Weekly</span>";
-  $upsell_heading .= "</div>";
-
-  return $upsell_heading;
+  ob_start(); ?>
+  <div class='row product-table-rate-heading'>
+    <span class='product-table-heading'>Image</span>
+    <span class='product-table-heading'>Product</span>
+    <span class='product-table-heading'>4 Hour</span>
+    <span class='product-table-heading'>Daily</span>
+    <span class='product-table-heading'>Weekly</span>
+  </div>
+  <?php
+  return ob_get_clean();
 }
 
 function ir_change_product_price_rental_rates( $price_html, $product ) {
