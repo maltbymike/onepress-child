@@ -82,7 +82,7 @@ function ir_customize_single_upsells() {
    if ( $woocommerce_loop['name'] == 'up-sells' ) {
       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
       add_filter( 'woocommerce_get_price_html', 'ir_change_product_price_rental_rates', 10, 2 );
-      add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading' );
+      add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading', 'woocommerce' );
    }
 }
 
