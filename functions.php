@@ -85,18 +85,6 @@ function ir_customize_single_upsells() {
    }
 }
 
-// add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading' );
-function ir_product_upsells_products_heading() {
-  return
-  "<div class='row product-table-rate-heading'>
-    <span class='product-table-heading'>Image</span>
-    <span class='product-table-heading'>Product</span>
-    <span class='product-table-heading'>4 Hour</span>
-    <span class='product-table-heading'>Daily</span>
-    <span class='product-table-heading'>Weekly</span>
-  </div>";
-}
-
 function ir_change_product_price_rental_rates( $price_html, $product ) {
 
   if ($product->is_type('simple_rental')) {
