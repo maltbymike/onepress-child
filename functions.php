@@ -85,7 +85,7 @@ function ir_customize_single_upsells() {
    }
 }
 
-add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading' );
+// add_filter( 'woocommerce_product_upsells_products_heading', 'ir_product_upsells_products_heading' );
 function ir_product_upsells_products_heading() {
   return
   "<div class='row product-table-rate-heading'>
