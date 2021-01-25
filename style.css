@@ -9,6 +9,10 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+:root {
+  --primary-color: #f47621;
+}
+
 .cart_item {
     padding: .75em 1em;
     vertical-align: middle;
@@ -96,8 +100,13 @@
     text-align: center;
 }
 
+.rental-price-heading {
+    background: var(--primary-color);
+}
+
 .rental-price-group .rental-price {
   display: block;
+  padding: 1em .35em;
 }
 
 .upsells .woocommerce-loop-product__title {
