@@ -72,6 +72,14 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_d
 add_action( 'woocommerce_after_single_product_summary', 'ir_woocommerce_output_upsells', 5 );
 
 function ir_woocommerce_output_upsells() {
+  echo "<div class='row product-table-rate-heading'>";
+  echo " <span class='product-table-heading'>Image</span>";
+  echo " <span class='product-table-heading'>Product</span>";
+  echo " <span class='product-table-heading'>4 Hour</span>";
+  echo " <span class='product-table-heading'>Daily</span>";
+  echo " <span class='product-table-heading'>Weekly</span>";
+  echo "</div>";
+
   woocommerce_upsell_display( -1,1 );
 }
 
@@ -82,18 +90,7 @@ function ir_customize_single_upsells() {
    if ( $woocommerce_loop['name'] == 'up-sells' ) {
       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
       add_filter( 'woocommerce_get_price_html', 'ir_change_product_price_rental_rates', 10, 2 );
-      add_action( 'woocommerce_before_shop_loop_item', 'ir_add_upsell_header', 10);
    }
-}
-
-function ir_add_upsell_header() {
-  echo "<div class='row product-table-rate-heading'>";
-  echo " <span class='product-table-heading'>Image</span>";
-  echo " <span class='product-table-heading'>Product</span>";
-  echo " <span class='product-table-heading'>4 Hour</span>";
-  echo " <span class='product-table-heading'>Daily</span>";
-  echo " <span class='product-table-heading'>Weekly</span>";
-  echo "</div>";
 }
 
 function ir_change_product_price_rental_rates( $price_html, $product ) {
