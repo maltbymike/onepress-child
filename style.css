@@ -89,10 +89,15 @@
   padding: .65em;
 }
 
-.upsells .rental-price {
+.related .rental-price-group,
+.upsells .rental-price-group {
     width: 33%;
     display: inline-block;
     text-align: center;
+}
+
+.rental-price-group .rental-price {
+  display: block;
 }
 
 .upsells .woocommerce-loop-product__title {
