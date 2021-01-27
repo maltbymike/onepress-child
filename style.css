@@ -115,13 +115,15 @@
     text-align: center;
 }
 
-.upsells .rental-price-heading {
+.upsells .rental-price-heading,
+.related .rental-price-heading {
     background: var(--primary-color);
     font-weight: 600;
     font-size: 1.2em;
 }
 
-.upsells .rental-price-group .rental-price {
+.upsells .rental-price-group .rental-price,
+.related .rental-price-group .rental-price {
   display: block;
   padding: .75em .35em;
 }
