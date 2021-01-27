@@ -126,7 +126,7 @@
   padding: .75em .35em;
 }
 
-.upsells .rental-price-heading {
+.rental-price.group .rental-price-heading {
   display: none;
 }
 
