@@ -73,11 +73,11 @@
 }
 
 /* Style rental product upsells */
-.upsells .product-table-heading {
+.upsells .product-upsells-heading {
   padding: .75em .35em;
 }
 
-.upsells .product-table-rate-heading,
+.upsells .product-upsells-heading-row,
 .upsells ul.products.columns-1 li.product a {
     display: grid;
     grid-template-columns: 110px repeat(auto-fit, minmax(16em, 1fr));
@@ -85,12 +85,12 @@
     align-items: center;
 }
 
-.upsells .product-table-rate-heading {
+.upsells .product-upsells-heading-row {
     background: var(--primary-color);
     color: #efefef;
 }
 
-.upsells .product-table-rental-price-group {
+.upsells .rental-rates {
   display: table;
 }
 
@@ -107,7 +107,7 @@
   padding: .65em;
 }
 
-.upsells .product-table-rental-price-group .product-table-heading,
+.upsells .rental-rates .product-upsells-heading,
 .related .rental-price-group,
 .upsells .rental-price-group {
     width: 33%;

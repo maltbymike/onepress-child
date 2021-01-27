@@ -30,13 +30,13 @@ if ( $upsells ) : ?>
 			<h2><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
-		<div class='product-table-rate-heading'>
-	    <span class='product-table-heading'>Image</span>
-	    <span class='product-table-heading'>Product</span>
-			<span class='product-table-rental-price-group'>
-		    <span class='product-table-heading'>4 Hour</span>
-		    <span class='product-table-heading'>Daily</span>
-		    <span class='product-table-heading'>Weekly</span>
+		<div class='product-upsells-heading-row'>
+	    <span class='product-upsells-heading'>Image</span>
+	    <span class='product-upsells-heading'>Product</span>
+			<span class='rental-rates'>
+		    <span class='product-upsells-heading'>4 Hour</span>
+		    <span class='product-upsells-heading'>Daily</span>
+		    <span class='product-upsells-heading'>Weekly</span>
 			</span>
 		</div>
 
