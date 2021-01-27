@@ -27,12 +27,6 @@
   margin-top: 0;
 }
 
-.product-table-heading {
-  background: #444;
-  color: #efefef;
-  padding: .75em 1em;
-}
-
 @media all and (min-width: 768px) {
   .product-table .row:nth-child(2n) {
     background: #f5f5f5;
@@ -73,12 +67,21 @@
 }
 
 /* Style rental product upsells */
+.product-table-heading {
+  padding: .75em .35em;
+}
+
 .upsells .product-table-rate-heading,
 .upsells ul.products.columns-1 li.product a {
     display: grid;
     grid-template-columns: 110px repeat(auto-fit, minmax(16em, 1fr));
     grid-gap: 1.5em;
     align-items: center;
+}
+
+.upsells .product-table-rate-heading {
+    background: var(--primary-color);
+    color: #efefef;
 }
 
 .upsells .product-table-rental-price-group {
