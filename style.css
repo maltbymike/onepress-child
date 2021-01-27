@@ -81,6 +81,10 @@
     align-items: center;
 }
 
+.upsells .product-table-rental-price-group {
+  display: table;
+}
+
 .upsells .product:nth-child(even) {
     background: #f5f5f5;
 }

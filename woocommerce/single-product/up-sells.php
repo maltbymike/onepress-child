@@ -30,7 +30,7 @@ if ( $upsells ) : ?>
 			<h2><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
-		<div class='row product-table-rate-heading'>
+		<div class='product-table-rate-heading'>
 	    <span class='product-table-heading'>Image</span>
 	    <span class='product-table-heading'>Product</span>
 			<span class='product-table-rental-price-group'>
