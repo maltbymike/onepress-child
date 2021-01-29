@@ -116,31 +116,6 @@
     color: #efefef;
 }
 
-@media only screen and (max-width: 768px) {
-
-  .upsells .rental-price-heading {
-    display: inline-block !important;
-    background: black;
-    color: white;
-  }
-
-  .upsells .rental-product-upsells-content {
-    flex-direction: column;
-  }
-
-  .upsells .rental-product-upsells-content .woocommerce-loop-product__title {
-    width: 100%;
-    text-align: center;
-    background: var(--primary-color);
-    color: #efefef;
-  }
-
-  .upsells .rental-product-upsells-content .price {
-    width: 100%;
-  }
-
-}
-
 .upsells .rental-rates {
   display: table;
 }
@@ -179,7 +154,33 @@
   padding: .75em .35em;
 }
 
+@media only screen and (max-width: 768px) {
+
+  .upsells .rental-price-heading {
+    display: inline-block !important;
+    background: black;
+    color: white;
+  }
+
+  .upsells .rental-product-upsells-content {
+    flex-direction: column;
+  }
+
+  .upsells .rental-product-upsells-content .woocommerce-loop-product__title {
+    width: 100%;
+    text-align: center;
+    background: var(--primary-color);
+    color: #efefef;
+  }
+
+  .upsells .rental-product-upsells-content .price {
+    width: 100%;
+  }
+
+}
+
 /* End Style rental product upsells */
+
 ul.products.columns-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
