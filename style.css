@@ -120,6 +120,9 @@
 
   .upsells .rental-price-heading {
     display: inline-block !important;
+    width: 100%;
+    background: black;
+    color: white;
   }
 
   .upsells .rental-product-upsells-content {
@@ -134,11 +137,6 @@
 
   .upsells .rental-product-upsells-content .price {
     width: 100%;
-  }
-
-  .upsells .product-upsells-heading-row {
-      background: black;
-      color: white;
   }
 
 }
