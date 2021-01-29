@@ -73,6 +73,14 @@
 }
 
 /* Style rental product upsells */
+.upsells .rental-price-heading {
+  display: none !important;
+}
+
+.upsells .woocommerce-loop-product__title {
+    text-align: left;
+}
+
 .upsells .product-upsells-heading {
   padding: .75em .35em;
 }
@@ -101,6 +109,23 @@
 .upsells .rental-product-upsells-content .woocommerce-loop-product__title,
 .upsells .rental-product-upsells-content .price {
   width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upsells .rental-price-heading {
+    display: inline-block !important;
+  }
+
+  .upsells .rental-product-upsells-content {
+    flex-direction: column;
+  }
+
+  .upsells .rental-product-upsells-content .woocommerce-loop-product__title,
+  .upsells .rental-product-upsells-content .price {
+    width: 100%;
+  }
+
 }
 
 .upsells .product-upsells-heading-row {
@@ -144,14 +169,6 @@
 .related .rental-price-group .rental-price {
   display: block;
   padding: .75em .35em;
-}
-
-.upsells .rental-price-heading {
-  display: none !important;
-}
-
-.upsells .woocommerce-loop-product__title {
-    text-align: left;
 }
 
 /* End Style rental product upsells */
