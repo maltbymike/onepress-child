@@ -34,9 +34,9 @@ if ( $upsells ) : ?>
 	    <span class='product-upsells-heading'>Image</span>
 	    <span class='product-upsells-heading'>Product</span>
 			<span class='rental-rates'>
-		    <span class='product-upsells-heading'>4 Hour</span>
-		    <span class='product-upsells-heading'>Daily</span>
-		    <span class='product-upsells-heading'>Weekly</span>
+		    <span class='product-upsells-heading 4-hour'>4 Hour</span>
+		    <span class='product-upsells-heading daily-rate'>Daily</span>
+		    <span class='product-upsells-heading weekly-rate'>Weekly</span>
 			</span>
 		</div>
 
