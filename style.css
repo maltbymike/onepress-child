@@ -4,10 +4,14 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.43
+ Version:      1.0.44.12
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+:root {
+  --primary-color: #f47621;
+}
 
 .cart_item {
     padding: .75em 1em;
@@ -21,12 +25,6 @@
 
 .no-top-margin {
   margin-top: 0;
-}
-
-.product-table-heading {
-  background: #444;
-  color: #efefef;
-  padding: .75em 1em;
 }
 
 @media all and (min-width: 768px) {
@@ -68,14 +66,94 @@
     text-align:center;
 }
 
-ul.products[class*=columns-] {
+.product-table-heading {
+  background: #444;
+  color: #efefef;
+  padding: .75em 1em;
+}
+
+/* Style rental product upsells */
+.upsells .product-upsells-heading {
+  padding: .75em .35em;
+}
+
+.upsells ul.products.columns-1 li.product {
+  width: 100%;
+  margin: 0;
+}
+
+.upsells ul.products.columns-1 li.product:last-child {
+  margin-bottom: 1em;
+}
+
+.upsells .product-upsells-heading-row,
+.upsells ul.products.columns-1 li.product a {
+    display: grid;
+    grid-template-columns: 110px 1fr 1fr;
+    grid-gap: 1.5em;
+    align-items: center;
+}
+
+.upsells .product-upsells-heading-row {
+    background: var(--primary-color);
+    color: #efefef;
+}
+
+.upsells .rental-rates {
+  display: table;
+}
+
+.upsells .product:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.upsells ul.products li.product {
+  margin-bottom: 1em;
+}
+
+.upsells ul.products.columns-1 li.product a img {
+  width: 8em;
+  padding: .65em;
+}
+
+.upsells .rental-rates .product-upsells-heading,
+.related .rental-price-group,
+.upsells .rental-price-group {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.upsells .rental-price-heading,
+.related .rental-price-heading {
+    background: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.upsells .rental-price-group .rental-price,
+.related .rental-price-group .rental-price {
+  display: block;
+  padding: .75em .35em;
+}
+
+.upsells .rental-price-heading {
+  display: none !important;
+}
+
+.upsells .woocommerce-loop-product__title {
+    text-align: left;
+}
+/* End Style rental product upsells */
+
+ul.products.columns-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   grid-gap: 1.5em;
 }
 
-ul.products[class*=columns-] li.product,
-.woocommerce-page ul.products[class*=columns-] li.product {
+ul.products.columns-4 li.product,
+.woocommerce-page ul.products.columns-4 li.product {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -86,8 +164,8 @@ ul.products[class*=columns-] li.product,
     box-shadow: 0.5em 0.5em 0.5em;
 }
 
-ul.products[class*=columns-] li.product:hover,
-.woocommerce-page ul.products[class*=columns-] li.product:hover {
+ul.products.columns-4 li.product:hover,
+.woocommerce-page ul.products.columns-4 li.product:hover {
   box-shadow: 0.5em 0.5em 0.5em #f47621;
 }
 
