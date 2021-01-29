@@ -88,11 +88,11 @@ function ir_customize_single_upsells() {
 }
 
 function ir_add_wrapper_upsell_content() {
-  return "<span class='rental-product-upsells-content'>";
+  echo "<span class='rental-product-upsells-content'>";
 }
 
 function ir_close_wrapper_upsell_content() {
-  return "</span>";
+  echo "</span>";
 }
 
 function ir_change_product_price_rental_rates( $price_html, $product ) {
