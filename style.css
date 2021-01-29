@@ -141,9 +141,9 @@
     text-align: center;
 }
 
-.upsells .rental-rates .product-upsells-heading .daily-rate,
-.related .rental-price-group .daily-rate,
-.upsells .rental-price-group .daily-rate {
+.upsells .rental-rates .product-upsells-heading:nth-child(2),
+.related .rental-price-group:nth-child(2),
+.upsells .rental-price-group:nth-child(2) {
   width: 34%;
 }
 
