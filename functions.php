@@ -103,6 +103,6 @@ function ir_change_product_price_rental_rates( $price_html, $product ) {
 
 // Sort upsells in menu order
 add_filter( 'woocommerce_upsells_orderby', 'ir_filter_woocommerce_upsells_orderby', 10, 1 );
-function if_filter_woocommerce_upsells_orderby( $orderby ) {
+function ir_filter_woocommerce_upsells_orderby( $orderby ) {
     return 'title';
 };
