@@ -106,3 +106,8 @@ add_filter( 'woocommerce_upsells_orderby', 'ir_filter_woocommerce_upsells_orderb
 function ir_filter_woocommerce_upsells_orderby( $orderby ) {
     return 'title';
 };
+
+add_filter( 'woocommerce_upsells_order', 'ir_filter_woocommerce_upsells_order', 10, 1 );
+function ir_filter_woocommerce_upsells_order( $order ) {
+    return 'asc';
+}
