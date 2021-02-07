@@ -81,7 +81,7 @@
 .related .woocommerce-loop-product__title,
 .upsells .woocommerce-loop-product__title {
     text-align: left;
-    margin: auto;
+    margin: auto !important;
 }
 
 .related .product-upsells-heading,
