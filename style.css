@@ -73,7 +73,8 @@
 }
 
 /* Style rental product upsells */
-.price .rental-price-heading {
+.related .rental-price-heading,
+.upsells .rental-price-heading {
   display: none !important;
 }
 
