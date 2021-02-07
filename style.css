@@ -4,13 +4,14 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.44.29
+ Version:      1.0.44.30
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 :root {
   --primary-color: #f47621;
+  --text-on-primary-color: #171717;
 }
 
 .cart_item {
@@ -90,6 +91,7 @@
 
 .price .rental-price-heading {
     background: var(--primary-color);
+    color: var(--text-on-primary-color);
     font-weight: 600;
 }
 
