@@ -111,4 +111,7 @@ function ir_filter_woocommerce_upsells_order( $order ) {
     return 'asc';
 }
 
-add_filter( 'woocommerce_related_products_columns', 2, 10);
+add_filter( 'woocommerce_related_products_columns', 'ir_filter_woocommerce_related_products_columns', 10);
+function ir_filter_woocommerce_related_products_columns() {
+    return 1;
+}
