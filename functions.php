@@ -106,11 +106,13 @@ function ir_filter_woocommerce_upsells_orderby( $orderby ) {
     return 'menu_order';
 };
 
+// Sort upsells in ascending order
 add_filter( 'woocommerce_upsells_order', 'ir_filter_woocommerce_upsells_order', 10, 1 );
 function ir_filter_woocommerce_upsells_order( $order ) {
     return 'asc';
 }
 
+// Set related product in 1 column rows
 add_filter( 'woocommerce_related_products_columns', 'ir_filter_woocommerce_related_products_columns', 10);
 function ir_filter_woocommerce_related_products_columns() {
     return 1;
