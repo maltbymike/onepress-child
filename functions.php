@@ -70,10 +70,8 @@ function onepress_get_social_profiles() {
 // Move upsells section above Additional Information
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action( 'woocommerce_after_single_product_summary', 'ir_woocommerce_output_upsells', 5 );
-
 function ir_woocommerce_output_upsells() {
   woocommerce_upsell_display( -1,1 );
-  woocommerce_related_products_columns( 1 );
 }
 
 // Customise display of upsells
@@ -112,3 +110,5 @@ add_filter( 'woocommerce_upsells_order', 'ir_filter_woocommerce_upsells_order', 
 function ir_filter_woocommerce_upsells_order( $order ) {
     return 'asc';
 }
+
+add_filter( 'woocommerce_related_products_columns', 1, 10)
