@@ -4,13 +4,14 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.44.34
+ Version:      1.0.44.35
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 :root {
   --primary-color: #f47621;
+  --secondary-bgcolor: #d7d7d7;
   --dark-text: #171717;
 }
 
@@ -206,7 +207,7 @@
 }
 
 .price .rental-price-heading {
-    background: var(--primary-color);
+    background: var(--secondary-bgcolor);
     color: var(--dark-text);
     font-weight: 600;
 }
@@ -224,8 +225,8 @@
 @media only screen and (max-width: 768px) {
   .price .rental-price-heading {
     display: inline-block !important;
-    background: #d7d7d7;
-    color: #5f5f5f;
+    background: var(--secondary-bgcolor);
+    color: var(--dark-text);
   }
 }
 /* End styling of rental rates */
