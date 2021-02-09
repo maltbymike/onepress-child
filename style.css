@@ -87,7 +87,7 @@
     margin: auto !important;
 }
 
-.related .product-upsells-heading,
+.related .product-related-heading,
 .upsells .product-upsells-heading {
   padding: .75em .35em;
 }
@@ -104,7 +104,7 @@
   margin-bottom: 1em;
 }
 
-.related .product-upsells-heading-row,
+.related .product-related-heading-row,
 .related ul.products.columns-1 li.product a,
 .upsells .product-upsells-heading-row,
 .upsells ul.products.columns-1 li.product a {
@@ -115,7 +115,7 @@
 }
 
 .related .rental-product-upsells-content,
-.related .product-upsells-heading-content,
+.related .product-related-heading-content,
 .upsells .rental-product-upsells-content,
 .upsells .product-upsells-heading-content {
   display: flex;
@@ -123,8 +123,8 @@
 
 .related .rental-product-upsells-content .woocommerce-loop-product__title,
 .related .rental-product-upsells-content .price,
-.related .product-upsells-heading-content .product-upsells-heading,
-.related .product-upsells-heading-content .rental-rates,
+.related .product-related-heading-content .product-related-heading,
+.related .product-related-heading-content .rental-rates,
 .upsells .rental-product-upsells-content .woocommerce-loop-product__title,
 .upsells .rental-product-upsells-content .price,
 .upsells .product-upsells-heading-content .product-upsells-heading,
@@ -132,7 +132,7 @@
   width: 50%;
 }
 
-.related .product-upsells-heading-row,
+.related .product-related-heading-row,
 .upsells .product-upsells-heading-row {
     background: var(--primary-color);
     color: #efefef;
@@ -163,7 +163,7 @@
 
 @media only screen and (max-width: 768px) {
 
-  .related .product-upsells-heading-row,
+  .related .product-related-heading-row,
   .upsells .product-upsells-heading-row {
     display: none;
   }
@@ -192,7 +192,7 @@
 
 
 /* Style rental rates */
-.related .rental-rates .product-upsells-heading,
+.related .rental-rates .product-related-heading,
 .upsells .rental-rates .product-upsells-heading,
 .price .rental-price-group {
     width: 33%;  /* Set width 34% in middle row next */
@@ -200,7 +200,7 @@
     text-align: center;
 }
 
-.related .rental-rates .product-upsells-heading:nth-child(2),
+.related .rental-rates .product-related-heading:nth-child(2),
 .upsells .rental-rates .product-upsells-heading:nth-child(2),
 .price .rental-price-group:nth-child(2) {
   width: 34%;
