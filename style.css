@@ -89,14 +89,14 @@
 
 .related .product-related-heading,
 .upsells .product-upsells-heading {
-  padding: .75em .35em;
+  padding: .35em;
 }
 
 .related ul.products.columns-1 li.product,
 .upsells ul.products.columns-1 li.product {
   width: 100%;
   margin: 0;
-  border-top: 2px var(--primary-color) solid;
+  border-bottom: 2px var(--primary-color) solid;
 }
 
 .related ul.products.columns-1 li.product:last-child,
