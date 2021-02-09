@@ -78,11 +78,8 @@ function ir_woocommerce_output_upsells() {
 add_action( 'woocommerce_before_shop_loop_item', 'ir_customize_single_upsells' );
 function ir_customize_single_upsells() {
    global $woocommerce_loop;
-   if ( $woocommerce_loop['name'] == 'up-sells' ) {
+   if ( $woocommerce_loop['name'] == 'up-sells' OR $woocommerce_loop['name'] == 'related' ) {
       remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-      // add_filter( 'woocommerce_get_price_html', 'ir_change_product_price_rental_rates', 10, 2 );
-      // add_action( 'woocommerce_shop_loop_item_title', 'ir_add_wrapper_upsell_content', 5 );
-      // add_action( 'woocommerce_after_shop_loop_item_title', 'ir_close_wrapper_upsell_content', 15 );
    }
 }
 
