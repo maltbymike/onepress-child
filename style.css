@@ -135,7 +135,8 @@
 .related .product-related-heading-row,
 .upsells .product-upsells-heading-row {
     background: var(--primary-color);
-    color: #efefef;
+    color: #000;
+    font-weight: 600;
 }
 
 .related .rental-rates,
