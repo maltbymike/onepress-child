@@ -42,6 +42,6 @@
     }
     }
 
-  echo $html;
+  return $html;
 
 ?>
