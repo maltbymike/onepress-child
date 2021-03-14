@@ -69,7 +69,7 @@ function onepress_get_social_profiles() {
 // Add prefix to sale item prices
 add_filter( 'woocommerce_get_price_html', 'ir_add_price_prefix_for_sales', 99, 2 );
 function ir_add_price_prefix_for_sales( $price, $product ){
-  if (!$product->is_type('simple_rental')) {
+  if (!$product->is_type('simple_rental') && !is_product_category()) {
     $price = 'Sell Price: ' . $price;
   }
   return $price;
