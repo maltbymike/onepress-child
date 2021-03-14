@@ -66,6 +66,9 @@ function onepress_get_social_profiles() {
 	return $html;
 }
 
+/* Remove Categories from Single Products */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
 // Add prefix to sale item prices
 add_filter( 'woocommerce_get_price_html', 'ir_add_price_prefix_for_sales', 99, 2 );
 function ir_add_price_prefix_for_sales( $price, $product ){
