@@ -66,6 +66,14 @@ function onepress_get_social_profiles() {
 	return $html;
 }
 
+// Add prefix to sale item prices
+if (!$product->is_type('simple_rental')) {
+  add_filter( 'woocommerce_get_price_html', 'ir_add_price_prefix_for_sales', 99, 2 );
+}
+function ir_add_price_prefix_for_sales( $price, $product ){
+    $price = 'Sell Price: ' . $price;
+    return $price;
+}
 
 // Move upsells section above Additional Information
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
