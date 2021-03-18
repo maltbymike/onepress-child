@@ -4,7 +4,7 @@
  Author:       Mike Maltby
  Author URI:   http://ingersollrentall.com
  Template:     onepress
- Version:      1.0.43
+ Version:      1.0.44
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -121,6 +121,11 @@ ul.products[class*=columns-] li.product:hover,
 
 .section-services .service-item:hover {
   box-shadow: .8em .8em .8em #f47621 !important;
+}
+
+/* Gutenslider Layout */
+.ir-set-gutenslider-height {
+  min-height: var(--gutenslider-min-height);
 }
 
 .slide-content .slide-text {
