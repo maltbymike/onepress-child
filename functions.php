@@ -65,11 +65,4 @@ function onepress_get_social_profiles()
 
 	return $html;
 }
-
-// Change "You may also like..." text in Woocommmerce
-function ir_change_ymal($translated) {
-  $translated = str_ireplace('You may also like', 'You may also need', $translated);
-  return $translated;
-}
-add_filter('gettext', 'ir_change_ymal');
 ?>
