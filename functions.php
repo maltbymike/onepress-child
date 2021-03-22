@@ -1,6 +1,5 @@
 <?php
 function my_theme_enqueue_styles() {
-
     $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
@@ -19,7 +18,8 @@ function ir_product_search_header() {
 add_action( 'onepress_page_before_content', 'ir_product_search_header');
 
 // Override onepress_get_social_profiles to add noopener tag
-function onepress_get_social_profiles() {
+function onepress_get_social_profiles()
+{
 	$array = get_theme_mod( 'onepress_social_profiles' );
 	if ( is_string( $array ) ) {
 		$array = json_decode( $array, true );
@@ -65,3 +65,11 @@ function onepress_get_social_profiles() {
 
 	return $html;
 }
+
+// Change "You may also like..." text in Woocommmerce
+function ir_change_ymal($translated) {
+  $translated = str_ireplace('You may also like', 'You may also need', $translated);
+  return $translated;
+}
+add_filter('gettext', 'ir_change_ymal');
+?>
