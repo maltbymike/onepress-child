@@ -29,7 +29,7 @@ do_action( 'onepress_page_before_content' );
 				<main id="main" class="site-main" role="main">
 					<?php
 					if ( is_archive() ) {
-						echo "test"
+						echo "test";
 					} else {
 						woocommerce_content();
 					}
