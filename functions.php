@@ -130,3 +130,9 @@ add_filter( 'woocommerce_related_products_columns', 'ir_filter_woocommerce_relat
 function ir_filter_woocommerce_related_products_columns() {
     return 1;
 }
+
+/***************************************************
+Nested Subcategories and products
+***************************************************/
+//Remove Subcategory Thumbnail
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
