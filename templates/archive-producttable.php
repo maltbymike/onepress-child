@@ -14,4 +14,6 @@
 
   </div>
 
+  <div><?php echo esc_html( $category->name ); ?><div> 
+
 </div>
