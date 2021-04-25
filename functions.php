@@ -147,15 +147,16 @@ add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 function ir_get_product_table( $category ) {
   get_template_part( 'templates/archive', 'producttable' );
   $subcategory_products = new WP_Query( array( 'post_type' => 'simple_rental', 'product_cat' => $category->slug ) );
-            if($subcategory_products->have_posts()):?>
-        <ul class="subcat-products">
-            <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
-            <li>
-                <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
-                    <?php the_title(); ?>
-                </a>
-            </li>
-            <?php endwhile;?>
-        </ul><?php
+    if($subcategory_products->have_posts()):?>
+      <ul class="subcat-products">
+          <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
+          <li>
+              <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
+                  <?php the_title(); ?>
+              </a>
+          </li>
+          <?php endwhile;?>
+      </ul>
+    <?php endif; wp_reset_query();
 }
 add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
