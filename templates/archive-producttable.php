@@ -14,6 +14,4 @@
 
   </div>
 
-  <div><?php echo $category->name; ?><div> 
-
 </div>
