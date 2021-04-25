@@ -144,7 +144,7 @@ function loop_columns() {
 add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 
 // Add subcategory rate header below subcategories
-function ir_get_product_table() {
+function ir_get_product_table( $category ) {
   get_template_part( 'templates/archive', 'producttable', $category );
 }
 add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
