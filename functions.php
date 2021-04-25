@@ -136,3 +136,9 @@ Nested Subcategories and products
 ***************************************************/
 //Remove Subcategory Thumbnail
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+
+//Override Default setting for product # per row to force list view
+function loop_columns() {
+  return 1; // 1 product per row
+}
+add_filter ( 'loop_shop_columns', 'loop_columns', 999);
