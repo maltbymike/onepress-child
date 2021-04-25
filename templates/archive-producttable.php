@@ -13,3 +13,5 @@
       <div class="d-none d-md-inline col-4 col-md-2 product-price-top product-table-heading"><?php echo __( 'Weekly', 'mpc' ); ?></div>
 
   </div>
+
+</div>
