@@ -164,9 +164,13 @@ function ir_get_product_table( $category ) {
   );
 
   if($subcategory_products->have_posts()):?>
+
     <ul class="subcat-products">
         <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
         <li>
+          
+            <?php woocommerce_template_loop_product_thumbnail(); ?>
+
             <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
                 <?php the_title(); ?>
             </a>
