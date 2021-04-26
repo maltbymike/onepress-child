@@ -151,7 +151,7 @@ function ir_get_product_table( $category ) {
   $subcategory_products = new WP_Query(
     array(
       'post_type' => 'product',
-      'product_cat' => $category->slug
+      'product_cat' => $category->slug,
       'tax_query' => array(
         array(
             'taxonomy' => 'product_visibility',
