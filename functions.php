@@ -167,7 +167,7 @@ function ir_get_product_table( $category ) {
 
       <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post();
 
-        $_product = new WC_Product($subcategory_products->post->ID); ?>
+        $_product = wc_get_product( $subcategory_products->post->ID ); ?>
 
         <div class="row align-items-center <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
