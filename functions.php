@@ -144,7 +144,7 @@ function loop_columns() {
 add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 
 // Add subcategory rate header below subcategories
-function ir_get_product_table( $category ) {
+function ir_get_product_table( $category, $product ) {
 
   get_template_part( 'templates/archive', 'producttable' );
 
@@ -165,18 +165,25 @@ function ir_get_product_table( $category ) {
 
   if($subcategory_products->have_posts()):?>
 
-    <ul class="subcat-products">
-        <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
-        <li>
-          
-            <?php woocommerce_template_loop_product_thumbnail(); ?>
+      <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
 
+        <div class="row align-items-center <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
+
+          <div class="col-md-2 product-image cart_item">
+            <?php woocommerce_template_loop_product_thumbnail(); ?>
+          </div>
+
+          <div class="col-md-4 product-name cart_item">
             <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
-                <?php the_title(); ?>
+                <!-- <?php the_title(); ?> -->
+                <?php $product->get_name(); ?>
             </a>
-        </li>
-        <?php endwhile;?>
-    </ul>
+          </div>
+
+        </div>
+
+      <?php endwhile;?>
+
   <?php endif; wp_reset_query();
 
 }
