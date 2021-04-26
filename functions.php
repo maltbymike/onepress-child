@@ -137,12 +137,19 @@ Nested Subcategories and products
 //Remove Subcategory Thumbnail
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
-//Change Category Link Opening to allow content toggle
+//Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
-  echo '<a class="product-category-content-toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
+  echo '<div class="product-category-content-toggle"><a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
 }
+
+function ir_template_loop_category_link_close() {
+  echo '</a></div>';
+}
+
 remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
+add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_close', 10 );
 
 //Override Default setting for product # per row to force list view
 function loop_columns() {
