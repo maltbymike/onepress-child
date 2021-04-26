@@ -144,7 +144,7 @@ function loop_columns() {
 add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 
 // Add subcategory rate header below subcategories
-function ir_get_product_table( $category, $product ) {
+function ir_get_product_table( $category ) {
 
   get_template_part( 'templates/archive', 'producttable' );
 
@@ -165,7 +165,9 @@ function ir_get_product_table( $category, $product ) {
 
   if($subcategory_products->have_posts()):?>
 
-      <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post(); ?>
+      <?php while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post();
+
+        $_product = new WC_Product($loop->post->ID); ?>
 
         <div class="row align-items-center <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
@@ -175,8 +177,8 @@ function ir_get_product_table( $category, $product ) {
 
           <div class="col-md-4 product-name cart_item">
             <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
-                <!-- <?php the_title(); ?> -->
-                <?php $product->get_name(); ?>
+                <?php the_title(); ?>
+                <?php $_product->get_name(); ?>
             </a>
           </div>
 
