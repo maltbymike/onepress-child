@@ -17,6 +17,7 @@
 </div>
 
 <?php
+global $category;
 $subcategory_products = new WP_Query(
   array(
     'post_type' => 'product',
