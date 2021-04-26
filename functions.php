@@ -213,6 +213,33 @@ function ir_get_product_table( $category ) {
 
           </div>
 
+          <div class="col-4 col-md-2 p-0">
+
+              <?php if ($_product->is_type('simple_rental')) { ?>
+                  <div class="d-block d-md-none product-price-top product-table-heading">4 Hours</div>
+                  <div class="product-price cart_item"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
+              <?php } ?>
+
+          </div>
+
+          <div class="col-4 col-md-2 p-0">
+
+              <?php if ($_product->is_type('simple_rental')) { ?>
+                  <div class="d-block d-md-none product-price-top product-table-heading">Daily</div>
+                  <div class="product-price cart_item"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
+              <?php } ?>
+
+          </div>
+
+          <div class="col-4 col-md-2 p-0">
+
+              <?php if ($_product->is_type('simple_rental')) { ?>
+                  <div class="d-block d-md-none product-price-top product-table-heading">Weekly</div>
+                  <div class="product-price cart_item"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
+              <?php } ?>
+
+          </div>
+
         </div>
 
       <?php endwhile;?>
