@@ -139,7 +139,7 @@ remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_
 
 //Change Category Link Opening to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
-  echo '<a class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
+  echo '<a class="product-category-content-toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
 }
 remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
