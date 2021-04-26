@@ -143,14 +143,22 @@ function ir_template_loop_category_link_open( $category ) {
 }
 
 function ir_template_loop_category_link_close() {
-  echo '</a></div>';
+  echo '</a>';
 }
 
+function ir_template_loop_category_title_wrapper_open() {
+  echo '<div class="product-category-content-toggle">';
+}
+
+function ir_template_loop_category_title_wrapper_close() {
+  echo '</div>';
+}
 remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
 remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_close', 10 );
-
+add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
 //Override Default setting for product # per row to force list view
 function loop_columns() {
   return 1; // 1 product per row
