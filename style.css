@@ -392,15 +392,13 @@ ul.products.columns-4 li.product:hover,
   }
 }
 
-.wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap,
-.products .product-category {
+.wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
     position: sticky;
     top: 75px;
     z-index: 10;
 }
 
-.admin-bar .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap,
-.admin-bar .products .product-category {
+.admin-bar .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
   top: 100px;
 }
 
