@@ -393,14 +393,14 @@ ul.products.columns-4 li.product:hover,
 }
 
 .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap,
-.product-category .product-category-content-toggle {
+.products .product-category {
     position: sticky;
     top: 75px;
     z-index: 10;
 }
 
 .admin-bar .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap,
-.admin-bar .product-category .product-category-content-toggle {
+.admin-bar .products .product-category {
   top: 100px;
 }
 
