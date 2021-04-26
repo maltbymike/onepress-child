@@ -172,7 +172,31 @@ function ir_get_product_table( $category ) {
         <div class="row align-items-center <?php echo esc_attr( sanitize_title( $_product->get_type() ) ); ?>">
 
           <div class="col-md-2 product-image cart_item">
-            <?php woocommerce_template_loop_product_thumbnail(); ?>
+
+              <?php
+
+              $image_id  = $_product->get_image_id();
+
+              $full = wp_get_attachment_image_url( $image_id, 'full' );
+
+              $thumbnail = wp_get_attachment_image_url( $image_id, 'thumbnail' );
+
+              ?>
+
+              <?php
+
+              $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image() );
+
+              if ( ! $_product->is_visible() ) {
+
+                  echo $thumbnail;
+
+              } else {
+
+                  printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink() ), $thumbnail );
+
+              } ?>
+
           </div>
 
           <div class="col-md-4 product-name cart_item">
