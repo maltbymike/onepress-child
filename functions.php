@@ -139,7 +139,7 @@ remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_
 
 //Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
-  echo '<div class="product-category-content-toggle"><a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
+  echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
 }
 
 function ir_template_loop_category_link_close() {
