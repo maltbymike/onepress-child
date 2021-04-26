@@ -146,7 +146,7 @@ add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 // Add subcategory rate header below subcategories
 function ir_get_product_table( $category ) {
 
-  get_template_part( 'templates/archive', 'producttable' );
+  get_template_part( 'templates/archive', 'producttable', $category );
 
   $subcategory_products = new WP_Query(
     array(
@@ -177,7 +177,6 @@ function ir_get_product_table( $category ) {
 
           <div class="col-md-4 product-name cart_item">
             <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
-                <?php the_title(); ?>
                 <?php echo $_product->get_name(); ?>
             </a>
           </div>
