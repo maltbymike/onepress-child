@@ -200,9 +200,17 @@ function ir_get_product_table( $category ) {
           </div>
 
           <div class="col-md-4 product-name cart_item">
-            <a href="<?php echo get_permalink( $subcategory_products->post->ID ) ?>">
-                <?php echo $_product->get_name(); ?>
-            </a>
+
+              <?php if ( ! $_product->is_visible() ){
+
+                  echo __( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_title() ) ) . '&nbsp;', "mpc" );
+
+              } else{
+
+                  echo __( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s </a>', esc_url( $_product->get_permalink() ), esc_html( $_product->get_title() ) ) ), "mpc" );
+
+              } ?>
+
           </div>
 
         </div>
