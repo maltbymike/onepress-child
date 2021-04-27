@@ -86,6 +86,8 @@ if($subcategory_products->have_posts()):
 
         </div>
 
+        <div class="price"><?php echo __($_product->get_price(), "mpc"); ?></div>
+
         <div class="col-4 col-md-2 p-0">
 
             <?php if ($_product->is_type('simple_rental')) { ?>
@@ -95,8 +97,7 @@ if($subcategory_products->have_posts()):
 
         </div>
 
-        <div class="price"><?php echo $_product->get_price(); ?></div>
-        
+
         <div class="col-4 col-md-2 p-0">
 
             <?php if ($_product->is_type('simple_rental')) { ?>
