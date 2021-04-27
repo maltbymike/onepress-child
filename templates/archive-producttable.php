@@ -86,7 +86,7 @@ if($subcategory_products->have_posts()):
 
         </div>
 
-        <div class="price">
+        <div class="price col-12 col-md-6">
 
           <?php echo $_product->get_price_html(); ?>
 
