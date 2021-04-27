@@ -74,45 +74,21 @@ if($subcategory_products->have_posts()):
 
         <div class="col-md-4 product-name cart_item">
 
-            <?php if ( ! $_product->is_visible() ){
+          <?php if ( ! $_product->is_visible() ){
 
-                echo __( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_title() ) ) . '&nbsp;', "mpc" );
+            echo __( apply_filters( 'woocommerce_cart_item_name', esc_html( $_product->get_title() ) ) . '&nbsp;', "mpc" );
 
-            } else{
+          } else{
 
-                echo __( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s </a>', esc_url( $_product->get_permalink() ), esc_html( $_product->get_title() ) ) ), "mpc" );
+            echo __( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s </a>', esc_url( $_product->get_permalink() ), esc_html( $_product->get_title() ) ) ), "mpc" );
 
-            } ?>
-
-        </div>
-
-        <div class="price"><?php echo $_product->get_price_html(); ?></div>
-
-        <div class="col-4 col-md-2 p-0">
-
-            <?php if ($_product->is_type('simple_rental')) { ?>
-                <div class="d-block d-md-none product-price-top product-table-heading">4 Hours</div>
-                <div class="product-price cart_item"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
-            <?php } ?>
+          } ?>
 
         </div>
 
+        <div class="price">
 
-        <div class="col-4 col-md-2 p-0">
-
-            <?php if ($_product->is_type('simple_rental')) { ?>
-                <div class="d-block d-md-none product-price-top product-table-heading">Daily</div>
-                <div class="product-price cart_item"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
-            <?php } ?>
-
-        </div>
-
-        <div class="col-4 col-md-2 p-0">
-
-            <?php if ($_product->is_type('simple_rental')) { ?>
-                <div class="d-block d-md-none product-price-top product-table-heading">Weekly</div>
-                <div class="product-price cart_item"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
-            <?php } ?>
+          <?php echo $_product->get_price_html(); ?>
 
         </div>
 
