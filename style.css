@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.03
+ Version:      1.0.45.04
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -23,23 +23,39 @@
 }
 
 .full-width-background-colour {
-    background-color: #f47621;
+    background-color: var(--primary-color);
 }
 
 .no-top-margin {
   margin-top: 0;
 }
 
+/* Style Product Category Page */
+.tax-product_cat .product-category-content-toggle {
+  background-color: var(--primary-color);
+  padding: 10px 10px 10px 15px;
+}
+
+.tax-product_cat .woocommerce-loop-category__title {
+  text-align: left;
+  padding: 0 !important;
+  font-size: 1.25rem !important;
+}
+
 @media all and (min-width: 768px) {
   .product-table .row:nth-child(2n) {
     background: #f5f5f5;
+  }
+
+  .tax-product_cat .price .rental-price-heading {
+    display: none !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .product-table .row {
-    border: thin solid #f47621;
-    box-shadow: 0px 5px 5px #f47621;
+    border: thin solid var(--primary-color);
+    box-shadow: 0px 5px 5px var(--primary-color);
     background: #ffffff;
     margin-bottom: 40px;
   }
@@ -74,6 +90,7 @@
   color: #efefef;
   padding: .75em 1em;
 }
+/* End Style Product Category Page */
 
 
 /* Style rental product upsells */
@@ -253,7 +270,7 @@ ul.products.columns-4 li.product,
 
 ul.products.columns-4 li.product:hover,
 .woocommerce-page ul.products.columns-4 li.product:hover {
-  box-shadow: 0.5em 0.5em 0.5em #f47621;
+  box-shadow: 0.5em 0.5em 0.5em var(--primary-color);
 }
 
 .woocommerce ul.products li.product .button {
@@ -281,7 +298,7 @@ ul.products.columns-4 li.product:hover,
 }
 
 .section-services .service-item:hover {
-  box-shadow: .8em .8em .8em #f47621 !important;
+  box-shadow: .8em .8em .8em var(--primary-color) !important;
 }
 
 /* Gutenslider Layout */
@@ -353,7 +370,7 @@ ul.products.columns-4 li.product:hover,
 }
 
 .ub-block-post-grid .is-grid article:hover {
-  box-shadow: 0.8em 0.8em 0.8em #f47621;
+  box-shadow: 0.8em 0.8em 0.8em var(--primary-color);
 }
 
 .wc-block-product-search .wc-block-product-search__button {
@@ -409,14 +426,14 @@ ul.products.columns-4 li.product:hover,
 .wp-block-woocommerce-product-search.homepage-product-search {
   padding: 5px 0;
   color: #ffffff;
-  background-color: #f47621;
+  background-color: var(--primary-color);
 }
 
 div.wpforms-container-full .wpforms-form input[type=submit],
 div.wpforms-container-full .wpforms-form button[type=submit] {
     background-color: #fff;
-    border: 1px solid #f47621;
-    color: #f47621;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 div.wpforms-container-full .wpforms-form input[type=submit]:hover,
@@ -428,23 +445,11 @@ div.wpforms-container-full .wpforms-form button[type=submit]:active,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:active,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:focus {
-    background-color: #f47621;
-    border: 1px solid: #f47621;
+    background-color: var(--primary-color);
+    border: 1px solid: var(--primary-color);
     color: #fff;
 }
 
 .homepage-product-search button.wc-block-product-search__button:before {
     content: "Search";
-}
-
-/* Style Product Category Page */
-.tax-product_cat .product-category-content-toggle {
-  background-color: #f47621;
-  padding: 10px 10px 10px 15px;
-}
-
-.tax-product_cat .woocommerce-loop-category__title {
-  text-align: left;
-  padding: 0 !important;
-  font-size: 1.25rem !important;
 }
