@@ -41,7 +41,7 @@
 /* Style Product Category Page */
 ul.columns-1 li.product {
   width: 100% !important;
-  margin: 0 0 30px !important;
+  margin: 0 !important;
 }
 
 .tax-product_cat .product-category-content-toggle {
@@ -58,6 +58,7 @@ ul.columns-1 li.product {
 @media all and (min-width: 768px) {
   ul.columns-1 li.product {
     border: thin solid var(--primary-color);
+    margin: 0 0 30px !important;
   }
 
   .product-table .row:nth-child(2n) {
