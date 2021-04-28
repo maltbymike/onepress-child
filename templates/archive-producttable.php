@@ -93,6 +93,6 @@ $category = $args['category'];
 
         <?php endwhile;?>
 
-    <?php endif; wp_reset_query();
+    <?php endif; wp_reset_query(); ?>
 
 </div>
