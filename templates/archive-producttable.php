@@ -1,7 +1,7 @@
 <?php
 $category = $args['category'];
 ?>
-<div class="product-table">
+<div class="container product-table">
 
     <div class="row product-table-rate-heading">
 
@@ -83,7 +83,7 @@ $category = $args['category'];
 
             </div>
 
-            <div class="price col-12 col-md-6">
+            <div class="price col-12 col-md-6 p-0">
 
               <?php echo $_product->get_price_html(); ?>
 
