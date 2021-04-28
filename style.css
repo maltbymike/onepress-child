@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.04
+ Version:      1.0.45.05
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -31,6 +31,11 @@
 }
 
 /* Style Product Category Page */
+ul.columns-1 li.product {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
 .tax-product_cat .product-category-content-toggle {
   background-color: var(--primary-color);
   padding: 10px 10px 10px 15px;
@@ -65,10 +70,10 @@
   }
 
   .product-image a img {
-    display: block;
-    margin: auto;
-    height: 10rem;
-    width: auto;
+    display: block !important;
+    margin: auto !important;
+    height: 10rem !important;
+    width: auto !important;
   }
 
   .product-name {
