@@ -1,7 +1,7 @@
 <?php
 $category = $args['category'];
 ?>
-<div class="container product-table">
+<div class="container product-table collapse" id="collapse-<?php echo $category->slug ?>">
 
     <div class="row product-table-rate-heading">
 
