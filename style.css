@@ -76,6 +76,10 @@ ul.columns-1 li.product {
     margin-bottom: 40px;
   }
 
+  .product-table .row:last-child {
+    margin-bottom: 0;
+  }
+
   .product-table-rate-heading {
       display: none !important;
   }
