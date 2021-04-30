@@ -139,7 +139,7 @@ remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_
 
 //Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
-  echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="' . get_term_link( $category, 'product_cat' ) . '">';
+  echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 }
 
 function ir_template_loop_category_link_close() {
@@ -157,7 +157,7 @@ remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_cate
 remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
-add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_close', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
 //Override Default setting for product # per row to force list view
 function loop_columns() {
