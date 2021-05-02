@@ -97,25 +97,6 @@ $category = $args['category'];
 
         <?php endif; wp_reset_query(); ?>
 
-        <ul class="wsubcategs">
-          <?php
-          $wsubargs = array(
-          'hierarchical' => 1,
-          'show_option_none' => '',
-          'hide_empty' => 0,
-          'parent' => $category->term_id,
-          'taxonomy' => 'product_cat'
-          );
-          $wsubcats = get_categories($wsubargs);
-          foreach ($wsubcats as $wsc):
-            ir_get_product_table();
-          ?>
-          <li><a href="<?php echo get_term_link( $wsc->slug, $wsc->taxonomy );?>"><?php echo $wsc->name;?></a></li>
-          <?php
-          endforeach;
-          ?>
-        </ul>
-
     </div>
 
 </div>
