@@ -138,7 +138,7 @@ Nested Subcategories and products
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
 //Remove product count
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
 //Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
