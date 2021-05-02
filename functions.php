@@ -137,6 +137,9 @@ Nested Subcategories and products
 //Remove Subcategory Thumbnail
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
+//Remove product count
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
 //Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
   echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
