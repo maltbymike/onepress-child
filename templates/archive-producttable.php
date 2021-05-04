@@ -98,9 +98,10 @@ $category_slug = $args['category_slug'];
         <?php endif; wp_reset_query(); ?>
 
         <?php
-        $parentid = get_queried_object_id();
+        $subcategory = get_term_by( 'slug', $category_slug, 'product_cat' );
+        $parentid = $subcategory->term_id;
         $args = array(
-            'child_of' => $parentid
+            'parent' => $parentid
         );
         $categories = get_terms(
             'product_cat', $args
