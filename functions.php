@@ -171,6 +171,12 @@ add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 
 // Add subcategory rate header below subcategories
 function ir_get_product_table( $category ) {
-  get_template_part( 'templates/archive', 'producttable', array ( 'category_slug' => $category->slug ) );
+  echo '<div class="collapse" id="collapse-' . $category_slug . '">';
+      echo '<div class="container product-table">';
+          get_template_part( 'templates/archive/producttable', 'header' );
+          get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );          
+      echo '</div>';
+  echo '<div>';
+
 }
 add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
