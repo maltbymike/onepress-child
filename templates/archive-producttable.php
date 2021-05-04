@@ -98,13 +98,13 @@ $category_slug = $args['category_slug'];
         <?php endif; wp_reset_query(); ?>
 
         <?php
-        $parentid = get_queried_object_id();
-        $args = array(
-            'parent' => $parentid
-        );
-        $categories = get_terms(
-            'product_cat', $args
-        );
+        // $parentid = get_queried_object_id();
+        // $args = array(
+        //     'parent' => $parentid
+        // );
+        // $categories = get_terms(
+        //     'product_cat', $args
+        // );
         // if ( $categories ) :
         //     foreach ( $categories as $category ) :
         //         echo esc_html($category->name);
