@@ -109,7 +109,7 @@ $category_slug = $args['category_slug'];
         if ( $categories ) :
             foreach ( $categories as $category ) :
                 echo esc_html($category->name);
-                get_template_part( '../templates/archive', 'producttable', array ( 'category_slug' => $category->slug ) );
+                get_template_part( 'templates/archive-producttable', '', array ( 'category_slug' => $category->slug ) );
             endforeach;
         endif;
         ?>
