@@ -1,7 +1,7 @@
 <?php
-$category = $args['category'];
+$category_slug = $args['category_slug'];
 ?>
-<div class="collapse" id="collapse-<?php echo $category->slug ?>">
+<div class="collapse" id="collapse-<?php echo $category_slug ?>">
 
     <div class="container product-table">
 
@@ -23,7 +23,7 @@ $category = $args['category'];
         $subcategory_products = new WP_Query(
           array(
             'post_type' => 'product',
-            'product_cat' => $category->slug,
+            'product_cat' => $category_slug,
             'tax_query' => array(
               array(
                   'taxonomy' => 'product_visibility',
