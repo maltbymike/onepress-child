@@ -189,22 +189,26 @@ function ir_get_product_table( $category ) {
 
               foreach ( $categories as $category ) :
 
-                ir_template_loop_category_title_wrapper_open();
-                ir_template_loop_category_link_open();
-                echo esc_html($category->name);
-                ir_template_loop_category_link_close();
-                ir_template_loop_category_title_wrapper_close();
+                echo '<div class="product-category-content-toggle">';
 
-                  echo '<div class="collapse" id="collapse-' . $category->slug . '">';
+                    echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
-                      echo '<div class="container product-table">';
+                        echo esc_html($category->name);
 
-                          get_template_part( 'templates/archive/producttable', 'header' );
-                          get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+                    echo '</a>';
 
-                      echo '</div>';
+                      echo '<div class="collapse" id="collapse-' . $category->slug . '">';
 
-                  echo '<div>';
+                          echo '<div class="container product-table">';
+
+                              get_template_part( 'templates/archive/producttable', 'header' );
+                              get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+
+                          echo '</div>';
+
+                      echo '<div>';
+
+                  echo '</div>';
 
               endforeach;
           endif;
