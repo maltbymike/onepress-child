@@ -100,7 +100,7 @@ $category_slug = $args['category_slug'];
         <?php
         $parentid = get_queried_object_id();
         $args = array(
-            'parent' => $parentid
+            'child_of' => $parentid
         );
         $categories = get_terms(
             'product_cat', $args
