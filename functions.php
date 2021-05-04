@@ -186,10 +186,21 @@ function ir_get_product_table( $category ) {
               'product_cat', $args
           );
           if ( $categories ) :
+
               foreach ( $categories as $category ) :
+
                   echo esc_html($category->name);
-                  get_template_part( 'templates/archive/producttable', 'header' );
-                  get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+                  echo '<div class="collapse" id="collapse-' . $category->slug . '">';
+
+                      echo '<div class="container product-table">';
+
+                          get_template_part( 'templates/archive/producttable', 'header' );
+                          get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+
+                      echo '</div>';
+
+                  echo '<div>';
+
               endforeach;
           endif;
 
