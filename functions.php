@@ -172,10 +172,29 @@ add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 // Add subcategory rate header below subcategories
 function ir_get_product_table( $category ) {
   echo '<div class="collapse" id="collapse-' . $category->slug . '">';
+
       echo '<div class="container product-table">';
+
           get_template_part( 'templates/archive/producttable', 'header' );
           get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+
+          $parentid = $category->term_id;
+          $args = array(
+              'parent' => $parentid
+          );
+          $categories = get_terms(
+              'product_cat', $args
+          );
+          if ( $categories ) :
+              foreach ( $categories as $category ) :
+                  echo esc_html($category->name);
+                  get_template_part( 'templates/archive/producttable', 'header' );
+                  get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+              endforeach;
+          endif;
+
       echo '</div>';
+
   echo '<div>';
 
 }

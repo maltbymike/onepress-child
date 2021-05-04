@@ -33,10 +33,6 @@ if($subcategory_products->have_posts()):
 
             $thumbnail = wp_get_attachment_image_url( $image_id, 'thumbnail' );
 
-            ?>
-
-            <?php
-
             $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image() );
 
             if ( ! $_product->is_visible() ) {
@@ -76,4 +72,3 @@ if($subcategory_products->have_posts()):
     <?php endwhile;?>
 
 <?php endif; wp_reset_query(); ?>
-?>
