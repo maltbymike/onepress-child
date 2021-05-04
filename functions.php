@@ -189,7 +189,12 @@ function ir_get_product_table( $category ) {
 
               foreach ( $categories as $category ) :
 
-                  echo esc_html($category->name);
+                ir_template_loop_category_title_wrapper_open();
+                ir_template_loop_category_link_open();
+                echo esc_html($category->name);
+                ir_template_loop_category_link_close();
+                ir_template_loop_category_title_wrapper_close();
+
                   echo '<div class="collapse" id="collapse-' . $category->slug . '">';
 
                       echo '<div class="container product-table">';
