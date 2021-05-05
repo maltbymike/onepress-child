@@ -2,10 +2,10 @@
 $category_slug = $args['category_slug'];
 $subcategory_products = new WP_Query(
   array(
-    'post_type' => 'product',
-    'product_cat' => $category_slug,
-    'include_children'  => false,
-    'tax_query' => array(
+    'post_type'         => 'product',
+    'product_cat'       => $category_slug,
+    'include_children'  => 0,
+    'tax_query'         => array(
       array(
           'taxonomy' => 'product_visibility',
           'field'    => 'name',
