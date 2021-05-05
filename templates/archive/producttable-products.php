@@ -3,13 +3,19 @@ $category_slug = $args['category_slug'];
 $subcategory_products = new WP_Query(
   array(
     'post_type'         => 'product',
-    'product_cat'       => $category_slug,
+//    'product_cat'       => $category_slug,
     'tax_query'         => array(
       array(
           'taxonomy' => 'product_visibility',
           'field'    => 'name',
           'terms'    => 'exclude-from-catalog',
           'operator' => 'NOT IN',
+      ),
+      array(
+          'taxonomy'         => 'product_cat',
+          'field'            => 'slug',
+          'terms'            => $category_slug,
+          'include_children' => false,
       ),
     ),
   )
