@@ -187,19 +187,23 @@ function ir_get_product_table( $category ) {
           );
           if ( $categories ) :
 
+            echo '<ul class="products column-1">';
+
               foreach ( $categories as $category ) :
 
-                echo '<div class="product-category-content-toggle">';
+                echo '<li class="product-category product-subcategory product">';
+
+                  echo '<div class="product-category-content-toggle">';
 
                     echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
-                        echo esc_html($category->name);
+                      echo esc_html($category->name);
 
                     echo '</a>';
 
-                echo '</div>';
+                  echo '</div>';
 
-                echo '<div class="collapse" id="collapse-' . $category->slug . '">';
+                  echo '<div class="collapse" id="collapse-' . $category->slug . '">';
 
                     echo '<div class="container product-table">';
 
@@ -208,9 +212,14 @@ function ir_get_product_table( $category ) {
 
                     echo '</div>';
 
-                echo '<div>';
+                  echo '</div>';
+
+                echo '</li>';
 
               endforeach;
+
+            echo '</ul>';
+
           endif;
 
       echo '</div>';
