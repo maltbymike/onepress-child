@@ -10,7 +10,7 @@ $subcategory_products = new WP_Query(
           'field'    => 'name',
           'terms'    => 'exclude-from-catalog',
           'operator' => 'NOT IN',
-          'include_children'  => false;
+          'include_children'  => false,
       ),
     ),
   )
