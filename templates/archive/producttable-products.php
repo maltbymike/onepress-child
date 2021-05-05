@@ -4,13 +4,13 @@ $subcategory_products = new WP_Query(
   array(
     'post_type'         => 'product',
     'product_cat'       => $category_slug,
-    'include_children'  => 0,
     'tax_query'         => array(
       array(
           'taxonomy' => 'product_visibility',
           'field'    => 'name',
           'terms'    => 'exclude-from-catalog',
           'operator' => 'NOT IN',
+          'include_children'  => 0,
       ),
     ),
   )
