@@ -187,7 +187,7 @@ function ir_get_product_table( $category ) {
           );
           if ( $categories ) :
 
-            echo '<ul class="products column-1">';
+            echo '<ul class="products subcategory-products column-1">';
 
               foreach ( $categories as $category ) :
 
