@@ -191,8 +191,6 @@ function ir_get_product_table( $category ) {
 
               foreach ( $categories as $category ) :
 
-                echo '<div class="subcategory-product-wrapper">';
-
                   echo '<li class="product-category product-subcategory product">';
 
                     echo '<div class="product-category-content-toggle">';
@@ -217,8 +215,6 @@ function ir_get_product_table( $category ) {
                     echo '</div>';
 
                   echo '</li>';
-
-                echo '</div>';
 
               endforeach;
 
