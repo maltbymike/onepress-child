@@ -187,11 +187,11 @@ function ir_get_product_table( $category ) {
           );
           if ( $categories ) :
 
-            echo '<div class="subcategory-products-wrapper">';
+            echo '<ul class="products subcategory-products column-1">';
 
-              echo '<ul class="products subcategory-products column-1">';
+              foreach ( $categories as $category ) :
 
-                foreach ( $categories as $category ) :
+                echo '<div class="subcategory-product-wrapper">';
 
                   echo '<li class="product-category product-subcategory product">';
 
@@ -218,11 +218,12 @@ function ir_get_product_table( $category ) {
 
                   echo '</li>';
 
-                endforeach;
+                echo '</div>';
 
-              echo '</ul>';
+              endforeach;
 
-            echo '</div>';
+            echo '</ul>';
+
           endif;
 
       echo '</div>';
