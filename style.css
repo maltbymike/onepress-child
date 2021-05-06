@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.17
+ Version:      1.0.45.18
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -14,6 +14,7 @@
   --primary-color: #f47621;
   --secondary-bgcolor: #d7d7d7;
   --dark-text: #171717;
+  --light-text: #efefef;
 }
 
 /* Style Header Bar */
@@ -45,7 +46,15 @@ ul.columns-1 li.product {
 }
 
 ul.columns-1 li.product:first-child {
-    margin: 0 !important; // Remove margin from first-child to avoid extra whitespace at top of page
+    margin: 0 !important; /* Remove margin from first-child to avoid extra whitespace at top of page */
+}
+
+.subcategory-product-wrapper {
+    background: #ffffff;
+    margin: -30px -15px;
+    padding: 30px 15px;
+    z-index: 10;
+    position: relative;
 }
 
 ul.products.subcategory-products {
@@ -132,7 +141,7 @@ ul.products.subcategory-products {
 
 .product-table-heading {
   background: #444;
-  color: #efefef;
+  color: var(--light-text);
   padding: .1rem 0;
 }
 /* End Style Product Category Page */
@@ -242,7 +251,7 @@ ul.products.subcategory-products {
     width: 100%;
     text-align: center;
     background: var(--primary-color);
-    color: #efefef;
+    color: var(--light-text);
   }
 
   .related .rental-product-upsells-content .price,

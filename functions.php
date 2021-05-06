@@ -187,39 +187,42 @@ function ir_get_product_table( $category ) {
           );
           if ( $categories ) :
 
-            echo '<ul class="products subcategory-products column-1">';
+            echo '<div class="subcategory-products-wrapper">';
 
-              foreach ( $categories as $category ) :
+              echo '<ul class="products subcategory-products column-1">';
 
-                echo '<li class="product-category product-subcategory product">';
+                foreach ( $categories as $category ) :
 
-                  echo '<div class="product-category-content-toggle">';
+                  echo '<li class="product-category product-subcategory product">';
 
-                    echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
+                    echo '<div class="product-category-content-toggle">';
 
-                      echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '</h3>';
+                      echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
-                    echo '</a>';
+                        echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '</h3>';
 
-                  echo '</div>';
-
-                  echo '<div class="collapse" id="collapse-' . $category->slug . '">';
-
-                    echo '<div class="container product-table">';
-
-                        get_template_part( 'templates/archive/producttable', 'header' );
-                        get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+                      echo '</a>';
 
                     echo '</div>';
 
-                  echo '</div>';
+                    echo '<div class="collapse" id="collapse-' . $category->slug . '">';
 
-                echo '</li>';
+                      echo '<div class="container product-table">';
 
-              endforeach;
+                          get_template_part( 'templates/archive/producttable', 'header' );
+                          get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
 
-            echo '</ul>';
+                      echo '</div>';
 
+                    echo '</div>';
+
+                  echo '</li>';
+
+                endforeach;
+
+              echo '</ul>';
+
+            echo '</div>';
           endif;
 
       echo '</div>';
