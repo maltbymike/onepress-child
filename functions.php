@@ -197,7 +197,7 @@ function ir_get_product_table( $category ) {
 
                       echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
-                        echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '</h3>';
+                        echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '[' . esc_html($category->count) . ']' . '</h3>';
 
                       echo '</a>';
 
