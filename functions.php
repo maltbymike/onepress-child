@@ -191,30 +191,34 @@ function ir_get_product_table( $category ) {
 
               foreach ( $categories as $category ) :
 
-                  echo '<li class="product-category product-subcategory product">';
+                  if ( $category->count > 0 ) :
 
-                    echo '<div class="product-category-content-toggle">';
+                      echo '<li class="product-category product-subcategory product">';
 
-                      echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
+                        echo '<div class="product-category-content-toggle">';
 
-                        echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '[' . esc_html($category->count) . ']' . '</h3>';
+                          echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
-                      echo '</a>';
+                            echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '</h3>';
 
-                    echo '</div>';
+                          echo '</a>';
 
-                    echo '<div class="collapse" id="collapse-' . $category->slug . '">';
+                        echo '</div>';
 
-                      echo '<div class="container product-table">';
+                        echo '<div class="collapse" id="collapse-' . $category->slug . '">';
 
-                          get_template_part( 'templates/archive/producttable', 'header' );
-                          get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
+                          echo '<div class="container product-table">';
 
-                      echo '</div>';
+                              get_template_part( 'templates/archive/producttable', 'header' );
+                              get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
 
-                    echo '</div>';
+                          echo '</div>';
 
-                  echo '</li>';
+                        echo '</div>';
+
+                      echo '</li>';
+
+                  endif;
 
               endforeach;
 
