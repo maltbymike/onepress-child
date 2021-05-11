@@ -235,7 +235,7 @@ add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 function auto_subcategory_thumbnail( $category ) {
 
   $show_multiple = true;
-  $recurse_category_ids = false;
+  $recurse_category_ids = true;
   $limit = 4;
 
   // does this category already have a thumbnail defined? if so, use that instead
@@ -286,6 +286,22 @@ function auto_subcategory_thumbnail( $category ) {
     woocommerce_subcategory_thumbnail( $category );
   }
 }
+
+/* Recursive function to fetch a list of child category IDs for the one passed */
+function get_sub_category_ids( $start, $results = array() ) {
+  if ( !is_array( $results ) ) $results = array();
+
+  $results[] = $start->term_id;
+  $cats = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => $start->term_id ) );
+  if ( is_array( $cats ) ) {
+    foreach( $cats as $cat ) {
+      $results = get_sub_category_ids( $cat, $results );
+    }
+  }
+
+  return $results;
+}
+
 //Remove Subcategory Thumbnail and Replace with our function
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 add_action( 'woocommerce_before_subcategory_title', 'auto_subcategory_thumbnail', 10 );
