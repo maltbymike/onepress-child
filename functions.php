@@ -134,9 +134,6 @@ function ir_filter_woocommerce_related_products_columns() {
 /***************************************************
 Nested Subcategories and products
 ***************************************************/
-//Remove Subcategory Thumbnail
-// remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
-
 //Remove product count
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
@@ -285,3 +282,6 @@ $number_of_thumbnails_to_get = 1;
     woocommerce_subcategory_thumbnail( $category );
   }
 }
+//Remove Subcategory Thumbnail and Replace with our function
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+add_action( 'woocommerce_before_subcategory_title', 'auto_subcategory_thumbnail', 10 );
