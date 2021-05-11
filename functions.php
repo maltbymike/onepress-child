@@ -234,7 +234,10 @@ add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 /* Get Thumbnails from Category Products */
 function auto_subcategory_thumbnail( $category ) {
 
-$number_of_thumbnails_to_get = 1;
+  $number_of_thumbnails_to_get = 1;
+  $shuffle = true;
+  $recurse_category_ids = false;
+  $limit = 20;
 
   // does this category already have a thumbnail defined? if so, use that instead
   if ( get_term_meta( $category->term_id, 'thumbnail_id', true ) ) {
@@ -243,14 +246,14 @@ $number_of_thumbnails_to_get = 1;
   }
 
   // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
-  if ( $this->recurse_category_ids ) {
-    $category_ids = $this->get_sub_category_ids( $category );
+  if ( $recurse_category_ids ) {
+    $category_ids = get_sub_category_ids( $category );
   } else {
     $category_ids = array( $category->term_id );
   }
 
   $query_args = array(
-    'posts_per_page' => $this->shuffle ? $this->limit : $number_of_thumbnails_to_get,
+    'posts_per_page' => $shuffle ? $limit : 1,
     'post_status' => 'publish',
     'post_type' => 'product',
     'meta_query' => array(
