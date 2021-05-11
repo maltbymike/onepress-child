@@ -234,10 +234,9 @@ add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 /* Get Thumbnails from Category Products */
 function auto_subcategory_thumbnail( $category ) {
 
-  $number_of_thumbnails_to_get = 1;
-  $shuffle = true;
+  $show_multiple = true;
   $recurse_category_ids = false;
-  $limit = 20;
+  $limit = 4;
 
   // does this category already have a thumbnail defined? if so, use that instead
   if ( get_term_meta( $category->term_id, 'thumbnail_id', true ) ) {
@@ -253,7 +252,7 @@ function auto_subcategory_thumbnail( $category ) {
   }
 
   $query_args = array(
-    'posts_per_page' => $shuffle ? $limit : 1,
+    'posts_per_page' => $show_multiple ? $limit : 1,
     'post_status' => 'publish',
     'post_type' => 'product',
     'meta_query' => array(
@@ -279,7 +278,9 @@ function auto_subcategory_thumbnail( $category ) {
 //    if ( get_option('gazchap-wc-category-product-thumbnails_category-size') ) {
 //      $image_size = get_option('gazchap-wc-category-product-thumbnails_category-size');
 //    }
-    echo get_the_post_thumbnail( $products[ array_rand( $products ) ]->ID, $image_size );
+    foreach ( $products as $product ) {
+      echo get_the_post_thumbnail( $product->ID, $image_size );
+    }
   } else {
     // show the default placeholder category image if there's no products inside this one
     woocommerce_subcategory_thumbnail( $category );
