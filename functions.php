@@ -135,7 +135,7 @@ function ir_filter_woocommerce_related_products_columns() {
 Nested Subcategories and products
 ***************************************************/
 //Remove Subcategory Thumbnail
-remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+// remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
 //Remove product count
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
@@ -232,3 +232,56 @@ function ir_get_product_table( $category ) {
 
 }
 add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
+
+
+/* Get Thumbnails from Category Products */
+function auto_subcategory_thumbnail( $category ) {
+
+$number_of_thumbnails_to_get = 1;
+
+  // does this category already have a thumbnail defined? if so, use that instead
+  if ( get_term_meta( $category->term_id, 'thumbnail_id', true ) ) {
+    woocommerce_subcategory_thumbnail( $category );
+    return;
+  }
+
+  // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
+  if ( $this->recurse_category_ids ) {
+    $category_ids = $this->get_sub_category_ids( $category );
+  } else {
+    $category_ids = array( $category->term_id );
+  }
+
+  $query_args = array(
+    'posts_per_page' => $this->shuffle ? $this->limit : $number_of_thumbnails_to_get,
+    'post_status' => 'publish',
+    'post_type' => 'product',
+    'meta_query' => array(
+      array(
+        'key' => '_thumbnail_id',
+        'value' => '',
+        'compare' => '!=',
+      ),
+    ),
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'product_cat',
+        'field' => 'term_id',
+        'terms' => $category_ids,
+        'operator' => 'IN',
+      ),
+    ),
+  );
+
+  $products = get_posts( $query_args );
+  if ( $products ) {
+    $image_size = 'shop_thumbnail';
+//    if ( get_option('gazchap-wc-category-product-thumbnails_category-size') ) {
+//      $image_size = get_option('gazchap-wc-category-product-thumbnails_category-size');
+//    }
+    echo get_the_post_thumbnail( $products[ array_rand( $products ) ]->ID, $image_size );
+  } else {
+    // show the default placeholder category image if there's no products inside this one
+    woocommerce_subcategory_thumbnail( $category );
+  }
+}
