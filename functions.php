@@ -304,4 +304,4 @@ function get_sub_category_ids( $start, $results = array() ) {
 
 //Remove Subcategory Thumbnail and Replace with our function
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
-add_action( 'woocommerce_before_subcategory_title', 'auto_subcategory_thumbnail', 10 );
+add_action( 'woocommerce_after_subcategory_title', 'auto_subcategory_thumbnail', 10 );
