@@ -159,7 +159,9 @@ remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_
 
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_open', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_close', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
 
@@ -289,6 +291,15 @@ function ir_auto_subcategory_thumbnail( $category ) {
     woocommerce_subcategory_thumbnail( $category );
   }
 }
+
+function ir_auto_subcategory_thumbnail_wrapper_open() {
+  echo '<div class="product-category-thumbnail">';
+}
+
+function ir_auto_subcategory_thumbnail_wrapper_close() {
+  echo '</div>';
+}
+
 
 /* Recursive function to fetch a list of child category IDs for the one passed */
 function get_sub_category_ids( $start, $results = array() ) {
