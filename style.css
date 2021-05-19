@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.29
+ Version:      1.0.45.30
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -54,12 +54,31 @@ ul.products.subcategory-products {
 }
 
 .tax-product_cat .product-category-content-toggle {
-  background-color: var(--primary-color);
-  padding: 10px 10px 10px 15px;
+  /* background-color: var(--primary-color);
+  padding: 10px 10px 10px 15px; */
   position: -webkit-sticky;
   position: sticky;
   top: 75px;
   z-index: 10;
+}
+
+.product-category-content-toggle a {
+  display: grid;
+  grid-template-rows: 20px 40px 20px;
+  grid-template-columns: 50% 50%;
+}
+
+.product-category-content-toggle .woocommerce-loop-category__title {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-self: center;
+  padding: 5px 10px !important;
+  background-color: var(--primary-color);
+}
+
+.product-category-content-toggle .woocommerce-loop-category__title {
+  grid-column-start: 2;
 }
 
 .product-category-content-toggle img {
@@ -102,7 +121,7 @@ ul.products.subcategory-products {
 
 @media all and (min-width: 768px) {
   ul.columns-1 li.product {
-    border: thin solid var(--primary-color);
+    /* border: thin solid var(--primary-color); */
   }
 
   .product-table .row:nth-child(2n) {
@@ -356,6 +375,7 @@ ul.products.columns-4 li.product:hover,
 .woocommerce ul.products li.product h3 {
   padding: .5em .5em;
   white-space: normal;
+
 }
 
 .section-services .service-item {
