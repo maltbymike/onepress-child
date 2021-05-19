@@ -77,7 +77,7 @@ ul.products.subcategory-products {
   background-color: var(--primary-color);
 }
 
-.product-category-content-toggle .woocommerce-loop-category__title {
+.product-category-content-toggle .product-category-thumbnail {
   grid-column-start: 2;
 }
 
