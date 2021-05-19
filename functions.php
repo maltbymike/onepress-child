@@ -157,9 +157,9 @@ remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_cate
 remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
-add_action( 'woocommerce_before_subcategory', 'auto_subcategory_thumbnail', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
 add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
 add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
 
@@ -235,7 +235,7 @@ add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 
 
 /* Get Thumbnails from Category Products */
-function auto_subcategory_thumbnail( $category ) {
+function ir_auto_subcategory_thumbnail( $category ) {
 
   $show_multiple = true;
   $recurse_category_ids = true;
