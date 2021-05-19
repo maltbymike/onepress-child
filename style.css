@@ -73,7 +73,6 @@ ul.products.subcategory-products {
   grid-column-start: 1;
   grid-column-end: 3;
   align-self: center;
-  padding: 5px 10px !important;
   background-color: var(--primary-color);
 }
 
@@ -111,7 +110,7 @@ ul.products.subcategory-products {
 
 .tax-product_cat .woocommerce-loop-category__title {
   text-align: left;
-  padding: 0 !important;
+  padding: 5px 10px !important;
   font-size: 1.25rem !important;
 }
 
