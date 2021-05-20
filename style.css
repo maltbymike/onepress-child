@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.30
+ Version:      1.0.45.31
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -64,8 +64,11 @@ ul.products.subcategory-products {
 
 .product-category-content-toggle a {
   display: grid;
-  grid-template-rows: 20px 40px 20px;
   grid-template-columns: 50% 50%;
+}
+
+.product-category-content-toggle a.collapsed {
+  grid-template-rows: 20px 40px 20px;
 }
 
 .product-category-content-toggle .woocommerce-loop-category__title {
@@ -78,6 +81,14 @@ ul.products.subcategory-products {
 
 .product-category-content-toggle .product-category-thumbnail {
   grid-column-start: 2;
+}
+
+.product-category-content-toggle a:not(collapsed) .product-category-thumbnail {
+    display: none;
+}
+
+.product-category-content-toggle a.collapsed .product-category-thumbnail {
+    display: block;
 }
 
 .product-category-content-toggle img {
