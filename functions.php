@@ -199,9 +199,13 @@ function ir_get_product_table( $category ) {
 
                         echo '<div class="product-category-content-toggle">';
 
-                          echo '<a class="product-category-title-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
+                          echo '<a class="product-category-title-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
 
                             echo '<h3 class="woocommerce-loop-category__title">' . esc_html($category->name) . '</h3>';
+
+                            ir_auto_subcategory_thumbnail_wrapper_open();
+                            ir_auto_subcategory_thumbnail( $category );
+                            ir_auto_subcategory_thumbnail_wrapper_close();
 
                           echo '</a>';
 

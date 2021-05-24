@@ -21,7 +21,7 @@ $subcategory_products = new WP_Query(
   )
 );
 
-if($subcategory_products->have_posts()):
+if ( $subcategory_products->have_posts() ):
 
     while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post();
 
