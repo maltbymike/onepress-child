@@ -177,7 +177,6 @@ function ir_get_product_table( $category ) {
 
       echo '<div class="container product-table">';
 
-          get_template_part( 'templates/archive/producttable', 'header' );
           get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
 
           $parentid = $category->term_id;

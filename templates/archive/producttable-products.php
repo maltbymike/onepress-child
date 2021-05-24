@@ -23,6 +23,8 @@ $subcategory_products = new WP_Query(
 
 if ( $subcategory_products->have_posts() ):
 
+    get_template_part( 'templates/archive/producttable', 'header' );
+    
     while ( $subcategory_products->have_posts() ) : $subcategory_products->the_post();
 
       $_product = wc_get_product( $subcategory_products->post->ID ); ?>
