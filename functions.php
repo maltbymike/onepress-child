@@ -214,7 +214,6 @@ function ir_get_product_table( $category ) {
 
                           echo '<div class="container product-table">';
 
-                              get_template_part( 'templates/archive/producttable', 'header' );
                               get_template_part( 'templates/archive/producttable', 'products', array ( 'category_slug' => $category->slug ) );
 
                           echo '</div>';
@@ -283,9 +282,6 @@ function ir_auto_subcategory_thumbnail( $category ) {
   $products = get_posts( $query_args );
   if ( $products ) {
     $image_size = 'shop_thumbnail';
-//    if ( get_option('gazchap-wc-category-product-thumbnails_category-size') ) {
-//      $image_size = get_option('gazchap-wc-category-product-thumbnails_category-size');
-//    }
     foreach ( $products as $product ) {
       echo get_the_post_thumbnail( $product->ID, $image_size );
     }
@@ -318,7 +314,3 @@ function get_sub_category_ids( $start, $results = array() ) {
 
   return $results;
 }
-
-//Remove Subcategory Thumbnail and Replace with our function
-// remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
-// add_action( 'woocommerce_after_subcategory_title', 'auto_subcategory_thumbnail', 10 );
