@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.32
+ Version:      1.0.45.33
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -43,6 +43,10 @@
 ul.columns-1 li.product {
   width: 100% !important;
   margin: 30px 0 0 !important;
+}
+
+ul.columns-1 li.product-subcategory {
+    margin: 0 !important;
 }
 
 ul.columns-1 li.product:first-child {
