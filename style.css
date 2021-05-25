@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.36
+ Version:      1.0.45.37
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -15,6 +15,9 @@
   --secondary-bgcolor: #d7d7d7;
   --dark-text: #171717;
   --light-text: #efefef;
+
+  --header-height: 75px;
+  --admin-bar-height: 32px;
 }
 
 /* Style Header Bar */
@@ -58,12 +61,14 @@ ul.products.subcategory-products {
 }
 
 .tax-product_cat .product-category-content-toggle {
-  /* background-color: var(--primary-color);
-  padding: 10px 10px 10px 15px; */
   position: -webkit-sticky;
   position: sticky;
-  top: 75px;
+  top: var( --header-height );
   z-index: 10;
+}
+
+.admin-bar .tax-product_cat .product-category-content-toggle {
+    top: calc( var( --header-height ) + var( --admin-bar-height ) );
 }
 
 .product-category-content-toggle a {
@@ -112,9 +117,13 @@ ul.products.subcategory-products {
 .row.product-table-rate-heading {
   position: -webkit-sticky;
   position: sticky;
-  top: calc(.75rem + .75rem + 1.25rem + 75px); /* padding-top padding-bottom font-size height-of-header */
+  top: calc(.75rem + .75rem + 1.25rem + var(--header-height)); /* padding-top padding-bottom font-size height-of-header */
   z-index: 9;
   background: #444;
+}
+
+.admin-bar .row.product-table-rate-heading {
+    top: calc(.75rem + .75rem + 1.25rem + var(--header-height) + var(--admin-bar-height)); /* padding-top padding-bottom font-size height-of-header height-of-admin-bar */
 }
 
 .collapsing .row.product-table-rate-heading {
@@ -444,11 +453,11 @@ ul.products.columns-4 li.product:hover,
 
 .stick-to-header {
   position: sticky;
-  top: 75px;
+  top: var(--header-height);
   z-index: 10;
 }
 .admin-bar .stick-to-header {
-  top: 100px;
+  top: calc(var(--header-height) + var(--admin-bar-height));
 }
 
 .table {
@@ -508,12 +517,12 @@ ul.products.columns-4 li.product:hover,
 
 .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
     position: sticky;
-    top: 75px;
+    top: var(--header-height);
     z-index: 10;
 }
 
 .admin-bar .wp-block-ub-content-toggle-accordion .wp-block-ub-content-toggle-accordion-title-wrap {
-  top: 100px;
+  top: calc(var(--header-height) + var(--admin-bar-height));
 }
 
 .wp-block-ub-content-toggle-accordion-content-wrap {
