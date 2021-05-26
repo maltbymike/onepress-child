@@ -241,54 +241,74 @@ add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 /* Get Thumbnails from Category Products */
 function ir_auto_subcategory_thumbnail( $category ) {
 
-  $show_multiple = true;
-  $recurse_category_ids = true;
-  $limit = 4;
+    $show_multiple = true;
+    $recurse_category_ids = true;
+    $limit = 4;
 
-  // does this category already have a thumbnail defined? if so, use that instead
-  if ( get_term_meta( $category->term_id, 'thumbnail_id', true ) ) {
-    woocommerce_subcategory_thumbnail( $category );
-    return;
-  }
-
-  // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
-  if ( $recurse_category_ids ) {
-    $category_ids = get_sub_category_ids( $category );
-  } else {
-    $category_ids = array( $category->term_id );
-  }
-
-  $query_args = array(
-    'posts_per_page' => $show_multiple ? $limit : 1,
-    'post_status' => 'publish',
-    'post_type' => 'product',
-    'meta_query' => array(
-      array(
-        'key' => '_thumbnail_id',
-        'value' => '',
-        'compare' => '!=',
-      ),
-    ),
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'product_cat',
-        'field' => 'term_id',
-        'terms' => $category_ids,
-        'operator' => 'IN',
-      ),
-    ),
-  );
-
-  $products = get_posts( $query_args );
-  if ( $products ) {
-    $image_size = 'shop_thumbnail';
-    foreach ( $products as $product ) {
-      echo get_the_post_thumbnail( $product->ID, $image_size );
+    // does this category already have a thumbnail defined? if so, use that instead
+    if ( get_term_meta( $category->term_id, 'thumbnail_id', true ) ) {
+        woocommerce_subcategory_thumbnail( $category );
+        return;
     }
-  } else {
-    // show the default placeholder category image if there's no products inside this one
-    woocommerce_subcategory_thumbnail( $category );
-  }
+
+    // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
+    if ( $recurse_category_ids ) {
+        $category_ids = get_sub_category_ids( $category );
+        $category_slugs = get_sub_category_slugs( $category->slug );
+    } else {
+        $category_ids = array( $category->term_id );
+        $category_slugs = $category->slug;
+    }
+
+    $query_args = array(
+        'posts_per_page' => $show_multiple ? $limit : 1,
+        'post_status' => 'publish',
+        'post_type' => 'product',
+        'meta_query' => array(
+            array(
+                'key' => '_thumbnail_id',
+                'value' => '',
+                'compare' => '!=',
+            ),
+        ),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'term_id',
+                'terms' => $category_ids,
+                'operator' => 'IN',
+            ),
+        ),
+    );
+
+    $products = get_posts( $query_args );
+
+
+    $query_args = array(
+        'limit' => $show_multiple ? $limit : 1,
+        'status' => 'publish',
+        'featured' => true,
+        'category' => $category_slugs,
+        'meta_query' => array(
+            array(
+                'key' => '_thumbnail_id',
+                'value' => '',
+                'compare' => '!=',
+            ),
+        ),
+    );
+
+    $products = wc_get_product( $query_args );
+
+    if ( $products ) {
+        $image_size = 'shop_thumbnail';
+        foreach ( $products as $product ) {
+            echo get_the_post_thumbnail( $product->ID, $image_size );
+        }
+    } else {
+        // show the default placeholder category image if there's no products inside this one
+        woocommerce_subcategory_thumbnail( $category );
+    }
 }
 
 function ir_auto_subcategory_thumbnail_wrapper_open() {
@@ -296,7 +316,7 @@ function ir_auto_subcategory_thumbnail_wrapper_open() {
 }
 
 function ir_auto_subcategory_thumbnail_wrapper_close() {
-  echo '</div>';
+    echo '</div>';
 }
 
 
@@ -313,4 +333,15 @@ function get_sub_category_ids( $start, $results = array() ) {
   }
 
   return $results;
+}
+
+function get_sub_category_slugs( $term_slug ) {
+    $parent = get_term_by( 'slug', $term_slug, 'category' );
+    $term_slugs = (get_categories([
+        'taxonomy' => 'category',
+        'child_of' => $parent->term_id,
+        'hide_empty' => false, // in the test, have no posts
+    ]));
+
+    return $term_slugs;
 }
