@@ -333,7 +333,6 @@ function get_sub_category_slugs( $term_id ) {
     $term_slugs = (get_categories([
         'taxonomy' => 'category',
         'child_of' => $parent->term_id,
-        'hide_empty' => false, // in the test, have no posts
     ]));
 
     return $term_slugs;
