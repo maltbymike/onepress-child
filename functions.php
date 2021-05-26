@@ -289,13 +289,6 @@ function ir_auto_subcategory_thumbnail( $category ) {
         'status' => 'publish',
         'featured' => true,
         'category' => $category_slugs,
-        'meta_query' => array(
-            array(
-                'key' => '_thumbnail_id',
-                'value' => '',
-                'compare' => '!=',
-            ),
-        ),
     );
 
     $products = wc_get_product( $query_args );
