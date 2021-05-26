@@ -262,6 +262,7 @@ function ir_auto_subcategory_thumbnail( $category ) {
         'posts_per_page' => $show_multiple ? $limit : 1,
         'post_status' => 'publish',
         'post_type' => 'product',
+        'orderby' => 'product_visibility, name',
         'meta_query' => array(
             array(
                 'key' => '_thumbnail_id',
@@ -275,18 +276,6 @@ function ir_auto_subcategory_thumbnail( $category ) {
                 'field' => 'term_id',
                 'terms' => $category_ids,
                 'operator' => 'IN',
-            ),
-            array(
-                'taxonomy' => 'product_visibility',
-                'field' => 'name',
-                'terms' => 'featured',
-                'operator' => 'IN',
-            ),
-            array(
-                'taxonomy' => 'product_visibility',
-                'field' => 'name',
-                'terms' => 'exclude-from-catalog',
-                'operator' => 'NOT IN',
             ),
         ),
     );
