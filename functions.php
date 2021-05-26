@@ -279,7 +279,7 @@ function ir_auto_subcategory_thumbnail( $category ) {
             array(
                  'taxonomy' => 'product_visibility',
                 'field' => 'name',
-                'terms' => 'featured, catalog',
+                'terms' => array( 'featured, catalog' ),
                 'operator' => 'IN',
             )
         ),
