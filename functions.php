@@ -336,7 +336,7 @@ function get_sub_category_ids( $start, $results = array() ) {
 }
 
 function get_sub_category_slugs( $term_id ) {
-    $parent = get_term_by( 'id', $term_id, 'category' );
+    $parent = get_term_by( 'id', $term_id, 'product_cat' );
     $term_slugs = (get_categories([
         'taxonomy' => 'category',
         'child_of' => $parent->term_id,
