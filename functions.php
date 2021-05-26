@@ -268,10 +268,6 @@ function ir_auto_subcategory_thumbnail( $category ) {
                 'value' => '',
                 'compare' => '!=',
             ),
-            array(
-                'key' => '_featured',
-                'value' => 'yes',
-            ),
         ),
         'tax_query' => array(
             array(
@@ -280,6 +276,12 @@ function ir_auto_subcategory_thumbnail( $category ) {
                 'terms' => $category_ids,
                 'operator' => 'IN',
             ),
+            array(
+                'taxonomy' => 'product_visibility',
+                'field' => 'name',
+                'terms' => 'featured',
+                'operator' => 'IN',
+            )
         ),
     );
 
