@@ -262,6 +262,7 @@ function ir_auto_subcategory_thumbnail( $category ) {
         'posts_per_page' => $show_multiple ? $limit : 1,
         'post_status' => 'publish',
         'post_type' => 'product',
+        'order' => 'DESC',
         'orderby' => 'product_visibility, name',
         'meta_query' => array(
             array(
