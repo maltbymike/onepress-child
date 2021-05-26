@@ -277,13 +277,13 @@ function ir_auto_subcategory_thumbnail( $category ) {
                 'operator' => 'IN',
             ),
             array(
-                 'taxonomy' => 'product_visibility',
+                'taxonomy' => 'product_visibility',
                 'field' => 'name',
-                'terms' => 'catalog',
+                'terms' => 'featured',
                 'operator' => 'IN',
             ),
             array(
-                 'taxonomy' => 'product_visibility',
+                'taxonomy' => 'product_visibility',
                 'field' => 'name',
                 'terms' => 'exclude-from-catalog',
                 'operator' => 'NOT IN',
