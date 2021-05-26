@@ -254,10 +254,8 @@ function ir_auto_subcategory_thumbnail( $category ) {
     // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
     if ( $recurse_category_ids ) {
         $category_ids = get_sub_category_ids( $category );
-        $category_slugs = get_sub_category_slugs( $category->term_id );
     } else {
         $category_ids = array( $category->term_id );
-        $category_slugs = $category->term_id;
     }
 
     $query_args = array(
@@ -282,16 +280,6 @@ function ir_auto_subcategory_thumbnail( $category ) {
     );
 
     $products = get_posts( $query_args );
-
-
-    $query_args = array(
-        'limit' => $show_multiple ? $limit : 1,
-        'status' => 'publish',
-        'featured' => true,
-        'category' => $category_slugs,
-    );
-
-    $products = wc_get_product( $query_args );
 
     if ( $products ) {
         $image_size = 'shop_thumbnail';
@@ -326,14 +314,4 @@ function get_sub_category_ids( $start, $results = array() ) {
   }
 
   return $results;
-}
-
-function get_sub_category_slugs( $term_id ) {
-    $parent = get_term_by( 'id', $term_id, 'product_cat' );
-    $term_slugs = (get_categories([
-        'taxonomy' => 'category',
-        'child_of' => $parent->term_id,
-    ]));
-
-    return $term_slugs;
 }
