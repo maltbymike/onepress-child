@@ -271,7 +271,7 @@ function ir_auto_subcategory_thumbnail( $category ) {
             array(
                 'key' => '_featured',
                 'value' => 'yes',
-            )
+            ),
         ),
         'tax_query' => array(
             array(
