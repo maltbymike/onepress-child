@@ -254,10 +254,10 @@ function ir_auto_subcategory_thumbnail( $category ) {
     // get a list of category IDs inside this category (so we're fetching products from all subcategories, not just the top level one)
     if ( $recurse_category_ids ) {
         $category_ids = get_sub_category_ids( $category );
-        $category_slugs = get_sub_category_slugs( $category->slug );
+        $category_slugs = get_sub_category_slugs( $category->term_id );
     } else {
         $category_ids = array( $category->term_id );
-        $category_slugs = $category->slug;
+        $category_slugs = $category->term_id;
     }
 
     $query_args = array(
@@ -335,8 +335,8 @@ function get_sub_category_ids( $start, $results = array() ) {
   return $results;
 }
 
-function get_sub_category_slugs( $term_slug ) {
-    $parent = get_term_by( 'slug', $term_slug, 'category' );
+function get_sub_category_slugs( $term_id ) {
+    $parent = get_term_by( 'id', $term_id, 'category' );
     $term_slugs = (get_categories([
         'taxonomy' => 'category',
         'child_of' => $parent->term_id,
