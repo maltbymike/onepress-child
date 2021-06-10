@@ -154,19 +154,17 @@ function ir_template_loop_category_title_wrapper_close() {
   echo '</div>';
 }
 
-if ( is_product_category() ) {
-    remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-    remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-    remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
-    add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
-    add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
-    // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_open', 10 );
-    // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
-    // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_close', 10 );
-    add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
-    add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
-}
+add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
+add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
+// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_open', 10 );
+// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
+// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_close', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
+add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
 
 //Override Default setting for product # per row to force list view
 function loop_columns() {
