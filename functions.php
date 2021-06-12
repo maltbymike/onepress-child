@@ -140,8 +140,22 @@ add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 function ir_change_category_page( $category ) {
     $rental_category = get_term_by( 'slug', 'rental', 'product_cat' );
     $rental_id       = $rental_category->term_id;
-    if ( is_product_category( 'rental' ) || term_is_ancestor_of( $rental_id, get_queried_object_id(), 'product_cat' ) ) {
-        echo "Test";
+    if ( term_is_ancestor_of( $rental_id, get_queried_object_id(), 'product_cat' ) ) {
+        remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+        remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+        remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+
+        add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
+        add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
+        // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_open', 10 );
+        // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
+        // add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_close', 10 );
+        add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
+        add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
+        add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
+
+        add_filter ( 'loop_shop_columns', 'ir_loop_columns', 999);
+
     }
 }
 add_action( 'template_redirect', 'ir_change_category_page' );
@@ -163,23 +177,10 @@ function ir_template_loop_category_title_wrapper_close() {
   echo '</div>';
 }
 
-remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
-
-add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_title_wrapper_open', 10 );
-add_action( 'woocommerce_before_subcategory', 'ir_template_loop_category_link_open', 10 );
-// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_open', 10 );
-// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail', 10 );
-// add_action( 'woocommerce_after_subcategory', 'ir_auto_subcategory_thumbnail_wrapper_close', 10 );
-add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_link_close', 10 );
-add_action( 'woocommerce_after_subcategory', 'ir_template_loop_category_title_wrapper_close', 15);
-
 //Override Default setting for product # per row to force list view
-function loop_columns() {
+function ir_loop_columns() {
   return 1; // 1 product per row
 }
-add_filter ( 'loop_shop_columns', 'loop_columns', 999);
 
 // Add subcategory rate header below subcategories
 function ir_get_product_table( $category ) {
@@ -245,8 +246,6 @@ function ir_get_product_table( $category ) {
   echo '<div>';
 
 }
-add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
-
 
 /* Get Thumbnails from Category Products */
 function ir_auto_subcategory_thumbnail( $category ) {
