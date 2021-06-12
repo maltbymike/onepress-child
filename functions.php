@@ -138,7 +138,9 @@ Nested Subcategories and products
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
 function ir_change_category_page( $category ) {
-    var_dump( $category );
+    if ( is_product_category() ) {
+        echo "Test";
+    }
 }
 add_action( 'template_redirect', 'ir_change_category_page' );
 
