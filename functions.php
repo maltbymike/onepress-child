@@ -140,7 +140,7 @@ add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 function ir_change_category_page( $category ) {
     $rental_category = get_term_by( 'slug', 'rental', 'product_cat' );
     $rental_id       = $rental_category->term_id;
-    if ( is_product_category( 'rental' ) || cat_is_ancestor_of( $rental_id, get_queried_object()->term_id ) ) {
+    if ( is_product_category( 'rental' ) || term_is_ancestor_of( $rental_id, get_queried_object_id(), 'product_cat' ) ) {
         echo "Test";
     }
 }
