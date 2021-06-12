@@ -5,7 +5,7 @@
  Author URI:   http://ingersollrentall.com
  Template:     onepress
 
- Version:      1.0.45.41
+ Version:      1.0.45.42
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -486,7 +486,6 @@ ul.products.columns-4 li.product:hover,
 
 .wc-block-product-search .wc-block-product-search__button {
   border: 3px solid #ffffff;
-  color: #ffffff;
 }
 
 .woocommerce table.shop_attributes th {
