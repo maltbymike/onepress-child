@@ -137,6 +137,11 @@ Nested Subcategories and products
 //Remove product count
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
 
+function ir_change_category_page( $category ) {
+    var_dump( $category );
+}
+add_action( 'template_redirect', 'ir_change_category_page' );
+
 //Change Category Link Opening and closing to allow content toggle
 function ir_template_loop_category_link_open( $category ) {
   echo '<a class="product-category-title-link collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-' . $category->slug . '" href="#collapse-' . $category->slug . '">';
