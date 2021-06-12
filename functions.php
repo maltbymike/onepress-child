@@ -155,7 +155,6 @@ function ir_change_category_page( $category ) {
         add_action( 'woocommerce_after_subcategory', 'ir_get_product_table', 15);
 
         add_filter ( 'loop_shop_columns', 'ir_loop_columns', 999);
-
     }
 }
 add_action( 'template_redirect', 'ir_change_category_page' );
