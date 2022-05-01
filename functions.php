@@ -105,12 +105,64 @@ function ir_close_wrapper_upsell_content() {
   echo "</span>";
 }
 function ir_change_product_price_rental_rates( $price_html, $product ) {
-  if ($product->is_type('simple_rental')) {
-    $price_html  = '<span class="rental-price-group"><span class="rental-price rental-price-heading daily-rate">Daily</span><span class="rental-price daily-rate">$' . $product->get_daily_rate() . '</span></span>';
-    $price_html .= '<span class="rental-price-group"><span class="rental-price rental-price-heading weekly-rate">Weekly</span><span class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</span></span>';
-    $price_html .= '<span class="rental-price-group"><span class="rental-price rental-price-heading weekend-rate">Weekend</span><span class="rental-price weekend-rate">$' . $product->get_weekend_fri_rate() . '</span></span>';
-  }
-  return $price_html;
+  	
+	if ($product->is_type('simple_rental')) {
+		$price_html = '';
+		if (is_product()) {
+			
+			// If 4 hour rate is the same as the daily rate then don't display 4 hour rate
+			if ($product->get_daily_rate() != $product->get_4_hour_rate()) {
+			$price_html .= '<span class="rental-price-group">
+								<span class="rental-price rental-price-heading 4-hour">4 Hour</span>
+								<span class="rental-price 4-hour-rate">$' . $product->get_4_hour_rate() . '</span>
+							</span>';
+			}
+
+			// If daily rate is the same as the weekly rate then display daily rate placeholder
+			if ($product->get_weekly_rate() != $product->get_daily_rate()) {	
+				$_daily_rate_display = '$' . $product->get_daily_rate();
+			} else {
+				$_daily_rate_display = '-';
+			}
+			$price_html .= '<span class="rental-price-group">
+								<span class="rental-price rental-price-heading daily-rate">Daily</span>
+								<span class="rental-price daily-rate">' . $_daily_rate_display . '</span>
+							</span>';
+
+			// Display weekly rate
+			$price_html .= '<span class="rental-price-group">
+								<span class="rental-price rental-price-heading weekly-rate">Weekly</span>
+								<span class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</span>
+							</span>';
+			
+			// If 4 hour rate is the same as the daily rate then don't display overnight rate
+			if ($product->get_daily_rate() != $product->get_4_hour_rate()) {
+				$price_html .= '<span class="rental-price-group">
+									<span class="rental-price rental-price-heading overnight">Overnight</span>
+									<span class="rental-price overnight-rate">$' . $product->get_4_hour_rate() . '</span>
+								</span>';
+			}
+
+			// If daily rate is the same as the weekly rate then don't display weekend rate since the weekly rate would override it
+			if ($product->get_weekly_rate() != $product->get_daily_rate()) {
+				$price_html .= '<span class="rental-price-group">
+									<span class="rental-price rental-price-heading weekend-rate">Weekend (Out Friday)</span>
+									<span class="rental-price weekend-rate">$' . $product->get_weekend_fri_rate() . '</span>
+								</span>';
+				$price_html .= '<span class="rental-price-group">
+								<span class="rental-price rental-price-heading weekend-rate">Weekend (Out Saturday)</span>
+								<span class="rental-price weekend-rate">$' . $product->get_weekend_sat_rate() . '</span>
+							</span>';
+			}	
+			
+		} else {
+			$price_html  = '<span class="rental-price-group"><span class="rental-price rental-price-heading daily-rate">Daily</span><span class="rental-price daily-rate">$' . $product->get_daily_rate() . '</span></span>';
+			$price_html .= '<span class="rental-price-group"><span class="rental-price rental-price-heading weekly-rate">Weekly</span><span class="rental-price weekly-rate">$' . $product->get_weekly_rate() . '</span></span>';
+			$price_html .= '<span class="rental-price-group"><span class="rental-price rental-price-heading weekend-rate">Weekend</span><span class="rental-price weekend-rate">$' . $product->get_weekend_fri_rate() . '</span></span>';
+		}
+	}
+  	
+	return $price_html;
 }
 
 // Sort upsells in menu order
