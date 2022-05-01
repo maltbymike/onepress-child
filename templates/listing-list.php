@@ -39,11 +39,11 @@ $variation = mpc_check_if_variation_exists( $ids );
 
           <div class="d-none d-md-inline col-md-4 product-name product-table-heading"><?php echo __( 'Product', 'mpc' ); ?></div>
 
-          <div class="d-none d-md-inline col-4 col-md-2 product-price-top product-table-heading"><?php echo __( '4 Hour', 'mpc' ); ?></div>
-
           <div class="d-none d-md-inline col-4 col-md-2 product-price-top product-table-heading"><?php echo __( 'Daily', 'mpc' ); ?></div>
 
           <div class="d-none d-md-inline col-4 col-md-2 product-price-top product-table-heading"><?php echo __( 'Weekly', 'mpc' ); ?></div>
+
+          <div class="d-none d-md-inline col-4 col-md-2 product-price-top product-table-heading"><?php echo __( 'Weekend', 'mpc' ); ?></div>
 
       </div>
 
@@ -121,15 +121,6 @@ $variation = mpc_check_if_variation_exists( $ids );
                 <div class="col-4 col-md-2 p-0">
 
                     <?php if ($_product->is_type('simple_rental')) { ?>
-                        <div class="d-block d-md-none product-price-top product-table-heading">4 Hours</div>
-                        <div class="product-price cart_item"><?php echo __( $_product->get_4_hour_rate(), "mpc" ); ?></div>
-                    <?php } ?>
-
-                </div>
-
-                <div class="col-4 col-md-2 p-0">
-
-                    <?php if ($_product->is_type('simple_rental')) { ?>
                         <div class="d-block d-md-none product-price-top product-table-heading">Daily</div>
                         <div class="product-price cart_item"><?php echo __( $_product->get_daily_rate(), "mpc" ); ?></div>
                     <?php } ?>
@@ -141,6 +132,15 @@ $variation = mpc_check_if_variation_exists( $ids );
                     <?php if ($_product->is_type('simple_rental')) { ?>
                         <div class="d-block d-md-none product-price-top product-table-heading">Weekly</div>
                         <div class="product-price cart_item"><?php echo __( $_product->get_weekly_rate(), "mpc" ); ?></div>
+                    <?php } ?>
+
+                </div>
+
+                <div class="col-4 col-md-2 p-0">
+
+                    <?php if ($_product->is_type('simple_rental')) { ?>
+                        <div class="d-block d-md-none product-price-top product-table-heading">Weekend</div>
+                        <div class="product-price cart_item"><?php echo __( $_product->get_weekend_fri_rate(), "mpc" ); ?></div>
                     <?php } ?>
 
                 </div>
